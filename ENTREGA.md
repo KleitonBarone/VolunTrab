@@ -1,4 +1,4 @@
-## Até a data final deverá ser entregue:
+## Até a data 05 e 06 de Setembro deverá ser entregue:
 
 * CRUD’S de entidade e voluntário.
 * Sistema de Cadastro e Login.
