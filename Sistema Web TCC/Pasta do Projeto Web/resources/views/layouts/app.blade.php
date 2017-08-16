@@ -24,7 +24,6 @@
     </script>
 </head>
 <body>
-    {{auth()->guard('instituicao')->user()->name}}
         <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -42,7 +41,7 @@
 @if (Auth::guest())
         <li><a href="/logar" class="waves-effect waves-light yellow btn">Login</a></li>
         <li> <a href="{{ route('register') }}" class="waves-effect waves-light yellow btn">Cadastro</a></li>
-@elseif (Auth::guest())
+@elseif (Auth::guest('user'))
 <li>
 
 <a class='dropdown-button btn yellow' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>

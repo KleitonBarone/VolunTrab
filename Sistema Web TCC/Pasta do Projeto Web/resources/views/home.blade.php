@@ -5,9 +5,6 @@
 @section('conteudo')
 <div class="container">
 <h1 class="center">Bem Vindo!</h1>
-<div class="parallax-container">
-      <div class="parallax"><img src="images/parallax1.jpg"></div>
-    </div>
     <div class="row">
         <div class="col s12">
           <div class="card medium">
@@ -25,10 +22,4 @@
         </div>
       </div>
 </div>
-<script>
-$(document).ready(function(){
-      $('.parallax').parallax();
-    });
-        
-</script>
 @endsection
