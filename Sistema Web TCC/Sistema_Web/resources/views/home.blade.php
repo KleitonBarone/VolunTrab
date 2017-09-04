@@ -20,7 +20,6 @@
         <ul>
             <li>Nome:<strong>{{ Auth::user()->name }}</strong></li>
             <li>Email:<strong>{{ Auth::user()->email }}</strong></li>
-            <li>CPF:<strong>{{ Auth::user()->cpf }}</strong></li>
             <li>Data de Nascimento:<strong>{{ Auth::user()->datanasc }}</strong></li>
             <li>Telefone:<strong>{{ Auth::user()->tel }}</strong></li>
         </ul>
@@ -30,7 +29,6 @@
         <ul>
             <li>Nome:<strong>{{ Auth::user()->name }}</strong></li>
             <li>Email:<strong>{{ Auth::user()->email }}</strong></li>
-            <li>CNPJ:<strong></strong>{{ Auth::user()->cnpj }}</li>
             <li>Telefone:<strong>{{ Auth::user()->tel }}</strong></li>
         </ul>
         @endif

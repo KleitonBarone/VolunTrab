@@ -53,7 +53,7 @@
 
                         <div class="row form-group">
                             <div class="col s8 offset-s4">
-                                <button type="submit" class="btn btn-primary blue">
+                                <button type="submit" class="btn btn-primary yellow darken-2">
                                     Logar
                                 </button>
                             </div>

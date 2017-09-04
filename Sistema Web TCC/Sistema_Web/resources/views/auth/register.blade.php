@@ -46,15 +46,7 @@
                             </div>
                         </div>
 
-                        <div class="row form-group">
-                            
-                                                        <div class="input-field col s12">
-                                                            <input id="cpf" type="text" class="validate" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-                                                            title="Digite o CPF no formato nnn.nnn.nnn-nn" placeholder="nnn.nnn.nnn-nn" required>
-                                                            <label for="cpf">CPF</label>
-                                                           
-                                                        </div>
-                         </div>
+                       
 
                         <div class="row form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             
@@ -74,7 +66,7 @@
                             
                                                         <div class="input-field col s12">
                                                             <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
-                                                            title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX)XXXX-XXXX" required>
+                                                            title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" required>
                                                             <label for="tel">Telefone</label>
                                                            
                                                         </div>
@@ -114,10 +106,11 @@
                         </div>
 
                         <input type="hidden" name="cnpj" id="cnpj" value="">
+                        <input type="hidden" name="cpf" id="cpf" value="">
 
                         <div class="row form-group">
                             <div class="center">
-                                <button type="submit" class="waves-effect waves-teal btn-flat">
+                                <button type="submit" class="waves-effect waves-yellow btn-flat">
                                     Registrar-se como Voluntário
                                 </button>
                             </div>
@@ -167,21 +160,13 @@
                             
                                                         <div class="input-field col s12">
                                                             <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
-                                                            title="Escreva o telefone desse modo: (XX)XXXX-XXXX" placeholder="(XX)XXXX-XXXX" required>
+                                                            title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" required>
                                                             <label for="tel">Telefone</label>
                                                            
                                                         </div>
                          </div>
 
-                         <div class="row form-group">
-                            
-                                                        <div class="input-field col s12">
-                                                            <input id="cnpj" type="text" class="validate" name="cnpj" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}\/[0-9]{4}-[0-9]{2}$"
-                                                            title="Escreva o CNPJ desse modo: XX.XXX.XXX/XXXX-XX" placeholder="XX.XXX.XXX/XXXX-XX" required>
-                                                            <label for="cnpj">CNPJ</label>
-                                                           
-                                                        </div>
-                         </div>
+                        
 
                         <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             
@@ -208,10 +193,11 @@
 
                         <input type="hidden" name="datanasc" id="datanasc" value="" >
                         <input type="hidden" name="cpf" id="cpf" value="" >
+                        <input type="hidden" name="cnpj" id="cnpj" value="">
 
                         <div class="row form-group">
                             <div class="center">
-                                <button type="submit" class="waves-effect waves-teal btn-flat">
+                                <button type="submit" class="waves-effect waves-yellow btn-flat">
                                     Registrar-se como Instituição
                                 </button>
                             </div>

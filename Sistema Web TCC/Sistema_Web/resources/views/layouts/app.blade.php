@@ -26,12 +26,12 @@
       <ul id="nav-mobile" class="right">
 
 @if (Auth::guest())
-        <li><a href="{{ route('login') }}" class="waves-effect waves-teal btn-flat">Login</a></li>
-        <li> <a href="{{ route('register') }}" class="waves-effect waves-teal btn-flat">Cadastro</a></li>
+        <li><a href="{{ route('login') }}" class="waves-effect waves-yellow btn-flat">Login</a></li>
+        <li> <a href="{{ route('register') }}" class="waves-effect waves-yellow btn-flat">Cadastro</a></li>
 @else
 <li>
 
-<a class='dropdown-button waves-effect waves-teal btn-flat' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>
+<a class='dropdown-button waves-effect waves-yellow btn-flat' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>
 
  
   <ul id='dropdown1' class='dropdown-content'>
