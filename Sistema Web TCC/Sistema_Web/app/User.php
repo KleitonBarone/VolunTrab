@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function voluntrab_created()
+    {
+        return $this->hasMany('App\Voluntrab', 'user_id');
+    }
+
+    public function voluntrab() {
+    return $this->belongsToMany('App\Voluntrab')
+    ->withTimestamps();
+
+    }
 }

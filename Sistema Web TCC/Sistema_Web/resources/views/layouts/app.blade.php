@@ -35,6 +35,8 @@
 
  
   <ul id='dropdown1' class='dropdown-content'>
+
+
     <li><a class="black-text" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -46,8 +48,6 @@
                                         </form></li>
   </ul>
 
-
- </li>
 @endif
 
       </ul>
@@ -61,6 +61,29 @@
 
                 <ul id="nav-mobile" class="left">
                     <li><a href="">Início</a></li>
+                    @if (Auth::check())
+                    <li>
+       <a class="" href="{{route('users.show', Auth::user()->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser-form').submit();">
+                                            Meu Perfil
+                                        </a>
+        <form id="showuser-form" action="{{route('users.show', Auth::user()->id )}}" method="" style="display: none;">
+        {{csrf_field()}}
+        </form>
+
+ </li>
+                    <li><a class="" href="{{route('users.view', Auth::user()->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showtrab-form').submit();">
+                                            Trabalhos Participando
+                                        </a>
+        <form id="showtrab-form" action="{{route('users.view', Auth::user()->id )}}" method="" style="display: none;">
+        {{csrf_field()}}
+        </form></li>
+                    @endif
+                    <li><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
+                    
                     <li><a href="">Ajuda</a></li>
                     <li><a href="">Instituições</a></li>
                     <li><a href="">Doações</a></li>
