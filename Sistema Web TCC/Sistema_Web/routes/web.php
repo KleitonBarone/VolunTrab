@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware'=>'auth'], function(){
+
+
+
 Route::resource('voluntrabs', 'VoluntrabController');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -44,3 +48,5 @@ Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuse
 //pagina view trabalhos de um usuario
 Route::get('user/{user}/trabalhos', ['uses' => 'VoluntrabUser@view',
 'as'=> 'users.view']);
+
+});

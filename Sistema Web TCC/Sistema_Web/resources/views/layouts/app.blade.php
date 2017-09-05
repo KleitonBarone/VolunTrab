@@ -81,13 +81,11 @@
         <form id="showtrab-form" action="{{route('users.view', Auth::user()->id )}}" method="" style="display: none;">
         {{csrf_field()}}
         </form></li>
+        <li><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
                     @endif
-                    <li><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
                     
-                    <li><a href="">Ajuda</a></li>
-                    <li><a href="">Instituições</a></li>
-                    <li><a href="">Doações</a></li>
-                    <li><a href="">Nossa Equipe</a></li>
+                    
+                    
                     
                 </ul>
             </div>
