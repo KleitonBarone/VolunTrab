@@ -57,7 +57,9 @@
 
                 <div class="center">
                 <button class="waves-effect waves-light blue btn" type="submit">Participar do Trabalho</button>
-                </div> 
+                </div>
+                <br>
+                <br> 
                 </form>
                 @else
                 <br>
@@ -65,7 +67,37 @@
                 <div class="center">
                     <button class="btn disabled">Você já está participando desse trabalho!</button>
                 </div>
+                <br>
+                <br>
                 @endif
+                @endif
+                <div class="divider"></div>
+                @if(count($voluntrab->user) > 0)
+                <br>
+                <h4> Pessoas que estão participando desse trabalho:</h4>
+                <br>
+                <table class="responsive-table highlight">
+                    <thead>
+                        <tr>
+                             <th>Nome</th>
+                             <th>Telefone</th>
+                             <th>Data de Nascimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($voluntrab->user as $voluntrabuser)
+                    <tr>
+                        <td>{{ $voluntrabuser->name }}</td>
+                        <td>{{ $voluntrabuser->tel }}</td>
+                        <td>{{ $voluntrabuser->datanasc }}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                    </table>
+                @else
+                <br>
+                <h5 class ="center"> Não há ninguem participando desse trabalho ainda.</h5>
+                <br>
                 @endif
         </div>
     </div>

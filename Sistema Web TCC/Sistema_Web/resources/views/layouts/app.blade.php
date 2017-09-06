@@ -76,7 +76,11 @@
                     <li><a class="" href="{{route('users.view', Auth::user()->id )}}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('showtrab-form').submit();">
+                                            @if (Auth::user()->tipo == 1 )
                                             Trabalhos Participando
+                                            @else
+                                            Trabalhos Requisitados
+                                            @endif
                                         </a>
         <form id="showtrab-form" action="{{route('users.view', Auth::user()->id )}}" method="" style="display: none;">
         {{csrf_field()}}
