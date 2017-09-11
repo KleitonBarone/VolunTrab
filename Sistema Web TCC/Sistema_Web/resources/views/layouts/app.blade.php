@@ -60,7 +60,7 @@
             <div class="nav-wrapper yellow darken-3">
 
                 <ul id="nav-mobile" class="left">
-                    <li><a href="">Início</a></li>
+                    <li><a href="/home">Início</a></li>
                     @if (Auth::check())
                     <li>
        <a class="" href="{{route('users.show', Auth::user()->id )}}"
@@ -88,6 +88,8 @@
         <li><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
                     @endif
                     
+                    <li><a href="/ajuda">Ajuda</a></li>
+                    <li><a href="/sobre-nos">Sobre a Equipe</a></li>
                     
                     
                     

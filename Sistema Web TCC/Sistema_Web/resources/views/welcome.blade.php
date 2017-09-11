@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('titulo')</title>
+    <title>Voluntrab</title>
 
     <!-- Styles -->
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -80,14 +80,42 @@
   <br>
   <br>
 
-     <div class="section white">
+  <div class="section white">
     <div class="row container">
       <h2 class="header center">Voluntrab</h2>
       <div class="divider"> </div>
-      <div class="col s4">
+      <div class="col s12">
           <h3 class="center">
-       <i class="material-icons center">dashboard</i>
+            <img height="20%" width="20%" src="{{ asset('image/o-que-e.png') }}">
           </h3>
+       <h3 class="center">O que é?</h4>
+       <br>
+      <h4 class="grey-text text-darken-3 lighten-3">
+      Com o Voluntrab você pode facilmente encontrar e participar de projetos voluntários,
+      ou seja, sem mais perder tempo procurando e tendo que preparar papeis! Com Voluntrab 
+      você vai direto ao assunto: Ajudar as pessoas!
+      </h4>
+      </div>
+      
+    </div>
+  </div>
+
+<div class="parallax-container">
+      <div class="parallax">
+      
+      <img src="{{ asset('image/imagem-parallax3.jpg') }}">
+
+      </div>
+    </div>
+
+     <div class="section white">
+    <div class="row container">
+      <h2 class="header center"></h2>
+      
+      <div class="col s4">
+          <h1 class="center yellow-text">
+            <img height="50%" width="50%" src="{{ asset('image/rapido.png') }}">
+          </h1>
        <h4 class="center">Rapido</h4>
        <br>
       <p class="grey-text text-darken-3 lighten-3">
@@ -97,9 +125,9 @@
       </p>
       </div>
       <div class="col s4">
-          <h3 class="center">
-       <i class="material-icons">airplay</i>
-          </h3>
+          <h1 class="center yellow-text">
+            <img height="50%" width="50%" src="{{ asset('image/facil.png') }}">
+          </h1>
        <h4 class="center">Fácil</h4>
        <br>
       <p class="grey-text text-darken-3 lighten-3">
@@ -108,10 +136,10 @@
       </p>
       </div>
       <div class="col s4">
-        <h3 class="center">
-       <i class="material-icons">loop</i>
-        </h3>
-       <h4 class="center">Suba de nivel</h4>
+        <h1 class="center yellow-text">
+          <img height="50%" width="50%" src="{{ asset('image/suba-de-nivel.png') }}">
+        </h1>
+       <h4 class="center">Suba de nível</h4>
        <br>
       <p class="grey-text text-darken-3 lighten-3">
       Ao utilizar o sistema é possivel subir de nivel, e então além de ajudar os outros

@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ajuda', function () {
+    return view('ajuda');
+});
+
+Route::get('/sobre-nos', function () {
+    return view('sobre-nos');
+});
+
 Auth::routes();
 
 Route::group(['middleware'=>'auth'], function(){

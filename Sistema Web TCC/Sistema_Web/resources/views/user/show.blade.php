@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Ver Perfil - Voluntrab')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
 

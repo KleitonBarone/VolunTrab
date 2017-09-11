@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Trabalhos Participando - Voluntrab')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
         <div class="container">

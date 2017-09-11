@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Registrar-se - Voluntrab')
+
 @section('content')
 <br />
 <br />

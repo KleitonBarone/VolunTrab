@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Ver Trabalho Requisitado - Voluntrab')
+
 @section('content')
         <div class="container">
     <div class="row">
