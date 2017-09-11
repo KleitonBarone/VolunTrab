@@ -98,10 +98,6 @@
 </div>
 
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="{{ asset('image/voluntariado.jpg') }}"></div>
-    </div>
-
         @yield('content')
     
 
