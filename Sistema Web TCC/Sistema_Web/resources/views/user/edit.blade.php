@@ -11,10 +11,20 @@
         <h1 class="center">Editar Perfil de {{$user->name}} </h1>
             <div class="divider"></div>
         <br>
-        <form action="{{ route('users.update', $user->id) }}" method="post">
+        <form enctype="multipart/form-data" action="{{ route('users.update', $user->id) }}" method="post">
                     {{csrf_field()}}
 
                     <input type="hidden" name="_method" value="put">
+
+            <div class="file-field input-field">
+                 <div class="btn">
+                 <span>File</span>
+                <input type="file" name="avatar" id="avatar">
+             </div>
+             <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+             </div>
+              </div>
 
         @if ($user->tipo == 1)
                     <div class="input-field">

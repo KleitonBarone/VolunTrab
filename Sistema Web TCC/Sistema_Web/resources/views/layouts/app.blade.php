@@ -21,7 +21,7 @@
    <div class="nav-wrapper white">
    <div class="row">
          <div class="col s3 offset-s1">
-            <a href="/home" class="brand-logo yellow-text"><img src="{{ asset('image/logo.png') }}" height="5%" width="5%"></a>
+            <a href="/home" class="brand-logo yellow-text"><img src="{{ asset('image/logo.png') }}" height="60" width="60"></a>
          </div>
       <ul id="nav-mobile" class="right">
 
@@ -29,6 +29,9 @@
         <li><a href="{{ route('login') }}" class="waves-effect waves-yellow btn-flat">Login</a></li>
         <li> <a href="{{ route('register') }}" class="waves-effect waves-yellow btn-flat">Cadastro</a></li>
 @else
+<li>
+<img src="{{ asset('avatars/' . Auth::user()->avatar) }}" width="75" height="75" style="">
+</li>
 <li>
 
 <a class='dropdown-button waves-effect waves-yellow btn-flat' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>
@@ -47,7 +50,7 @@
                                             {{ csrf_field() }}
                                         </form></li>
   </ul>
-
+</li>
 @endif
 
       </ul>

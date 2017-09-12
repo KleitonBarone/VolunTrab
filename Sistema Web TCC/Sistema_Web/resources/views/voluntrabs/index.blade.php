@@ -28,30 +28,33 @@
             };
           };
         ?>
-<table>
-<td>
-<tr>
-<td>
-Trabalho Criado por: <strong>{{$criador}}</strong>
-</td>
-<td>
-        <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+
+
+        <div class="col s12">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Trabalho Criado por: <strong>{{$criador}}</strong><br>
+          Descrição: {{$voluntrab->desc}}
+          </p>
+        </div>
+        <div class="card-action">
+          <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light green btn" type="submit">Visualizar</button>
+        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
-</td>
-@if($criadorid == Auth::user()->id)
-<td>
-<a class="btn btn-primary" href="{{route('voluntrabs.edit', $voluntrab->id )}}">
-                        Editar Trabalho
-                </a>
-</td>
-@endif
-</tr>
-</table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 @empty
 <h4 class="center">Sem Resultados!</h4>
-<h4 class="center">Espere uma instituição cadastrar um trabalho voluntário.</h4>
+<h4 class="center">Espere uma instituição requisitar um trabalho voluntário.</h4>
 @endforelse
         </div>
     </div>

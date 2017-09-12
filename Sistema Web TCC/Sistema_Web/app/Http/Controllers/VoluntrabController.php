@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Voluntrab;
 use App\User;
 use Illuminate\Http\Request;
+use Image;
 
 class VoluntrabController extends Controller
 {
@@ -43,6 +44,15 @@ class VoluntrabController extends Controller
                 $voluntrab->data = $request->data;
                 $voluntrab->desc = $request->desc;
                 $voluntrab->user_id = $request->user_id;
+
+                if($request->hasFile('avatar')){
+                    $avatar = $request->file('avatar');
+                    $filename = time() . '.' . $avatar->getClientOriginalExtension();
+                    Image::make($avatar)->resize(300, 300)->save( public_path('/avatarsvoluntrab/' . $filename) );
+        
+                    $voluntrab->avatar = $filename;
+                }
+
                 $voluntrab->save();
                 
                 return redirect('/voluntrabs');
@@ -82,6 +92,14 @@ class VoluntrabController extends Controller
     {
         $voluntrab->data = $request->data;
         $voluntrab->desc = $request->desc;
+
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save( public_path('/avatarsvoluntrab/' . $filename) );
+
+            $voluntrab->avatar = $filename;
+        }
 
         $voluntrab->save();
         

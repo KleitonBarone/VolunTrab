@@ -36,6 +36,11 @@
              <div class="divider"></div>
              <br>
              <br>
+             <div class="center">
+             <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="250" height="150" style="">
+             </div>
+             <br>
+             <br>
              <h3>Data da realização do trabalho: <strong>{{$voluntrab->data}}</strong></h3>
              <h5>Descrição do Trabalho: {{$voluntrab->desc}} </h5>
 

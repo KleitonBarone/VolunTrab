@@ -35,20 +35,28 @@ foreach ($users as $criador){
     };
 };
 ?>
-<table>
-<td>
-<tr>
-<td>
-Trabalho Criado por: <strong>{{$dono}}</strong>
-</td>
-<td>
-        <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+
+      <div class="col s12">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Trabalho Criado por: <strong>{{$dono}}</strong><br>
+          Descrição: {{$voluntrab->desc}}
+          </p>
+        </div>
+        <div class="card-action">
+          <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light green btn" type="submit">Visualizar</button>
+        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
-</td>
-</tr>
-</table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 @endif
 @endforeach
 @if($option == 0)
@@ -76,20 +84,28 @@ Trabalho Criado por: <strong>{{$dono}}</strong>
             @endif
 
 @if ($hit === 1)
-<table>
-<td>
-<tr>
-<td>
-Trabalho Criado por: <strong>{{$user->name}}</strong>
-</td>
-<td>
-        <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+
+      <div class="col s12">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Trabalho Criado por: <strong>{{$user->name}}</strong><br>
+          Descrição: {{$voluntrab->desc}}
+          </p>
+        </div>
+        <div class="card-action">
+          <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light green btn" type="submit">Visualizar</button>
+        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
-</td>
-</tr>
-</table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 @endif
 @endforeach

@@ -17,6 +17,7 @@ class CreateVoluntrabsTable extends Migration
             $table->increments('id');
             $table->string('data');
             $table->string('desc');
+            $table->string('avatar')->default('default.png');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 

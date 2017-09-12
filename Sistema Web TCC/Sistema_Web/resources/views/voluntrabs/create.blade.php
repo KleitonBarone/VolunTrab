@@ -14,8 +14,19 @@
     </div>
 <div class="row">
     <div class="col s12">
-        <form method="post" action="{{ route('voluntrabs.store') }}">
+        <form enctype="multipart/form-data" method="post" action="{{ route('voluntrabs.store') }}">
                     {{csrf_field()}}
+
+                <div class="file-field input-field">
+                 <div class="btn">
+                 <span>File</span>
+                <input type="file" name="avatar" id="avatar">
+             </div>
+             <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+             </div>
+              </div>
+
                 <div class="row">
                     <div class="input-field col s12">
                             <input id="data" type="text" class="validate" name="data" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"

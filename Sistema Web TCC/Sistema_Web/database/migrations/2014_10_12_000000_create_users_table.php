@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('tipo');
+            $table->string('avatar')->default('default.png');
             $table->string('cpf')->nullable();
             $table->string('datanasc')->nullable();
             $table->string('cnpj')->nullable();
