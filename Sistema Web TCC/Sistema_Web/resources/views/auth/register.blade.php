@@ -3,6 +3,7 @@
 @section('titulo', 'Registrar-se - Voluntrab')
 
 @section('content')
+<div class="grey lighten-4">
 <br />
 <br />
 <br />
@@ -11,7 +12,7 @@
     <div class="row">
         <div class="col s8 offset-s2">
 
-            <div class="card">
+            <div class="card z-depth-5">
                 <br>
                 <div class="row">
                     <div class="col s11 offset-s1">
@@ -22,8 +23,8 @@
                 <div class="container">
                     <div class="row">
                     <ul class="tabs">
-                        <li class="tab col s6"><a class="active" href="#test1">Voluntário</a></li>
-                        <li class="tab col s6"><a href="#test2">Instituição</a></li>
+                        <li class="tab col s6"><a class="active blue-text" href="#test1">Voluntário</a></li>
+                        <li class="tab col s6"><a href="#test2" class="blue-text">Instituição</a></li>
                     </ul>
                     </div>
                     <!-- voluntário -->
@@ -67,9 +68,8 @@
                         <div class="row form-group">
                             
                                                         <div class="input-field col s12">
-                                                            <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
-                                                            title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" required>
-                                                            <label for="tel">Telefone</label>
+                                                            <input id="telvolun" type="text" class="validate" name="telvolun" required>
+                                                            <label for="telvolun">Telefone</label>
                                                            
                                                         </div>
                          </div>
@@ -77,8 +77,7 @@
                          <div class="row form-group">
                             
                                                         <div class="input-field col s12">
-                                                            <input id="datanasc" type="text" class="validate" name="datanasc" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                                                            title="Escreva a data desse modo: XX/XX/XXXX" placeholder="XX/XX/XXXX" required>
+                                                            <input id="datanasc" type="text" class="validate" name="datanasc"  required>
                                                             <label for="datanasc">Data de Nascimento</label>
                                                            
                                                         </div>
@@ -92,7 +91,7 @@
                                 <label for="password">Senha</label>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong class="red-text">{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -107,12 +106,9 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="cnpj" id="cnpj" value="">
-                        <input type="hidden" name="cpf" id="cpf" value="">
-
                         <div class="row form-group">
                             <div class="center">
-                                <button type="submit" class="waves-effect waves-yellow btn-flat">
+                                <button type="submit" class="waves-effect btn btn-primary blue darken-2">
                                     Registrar-se como Voluntário
                                 </button>
                             </div>
@@ -161,9 +157,8 @@
                         <div class="row form-group">
                             
                                                         <div class="input-field col s12">
-                                                            <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
-                                                            title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" required>
-                                                            <label for="tel">Telefone</label>
+                                                            <input id="telinst" type="text" class="validate" name="telinst" required>
+                                                            <label for="telinst">Telefone</label>
                                                            
                                                         </div>
                          </div>
@@ -193,13 +188,9 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="datanasc" id="datanasc" value="" >
-                        <input type="hidden" name="cpf" id="cpf" value="" >
-                        <input type="hidden" name="cnpj" id="cnpj" value="">
-
                         <div class="row form-group">
                             <div class="center">
-                                <button type="submit" class="waves-effect waves-yellow btn-flat">
+                                <button type="submit" class="waves-effect btn btn-primary blue darken-2">
                                     Registrar-se como Instituição
                                 </button>
                             </div>
@@ -219,4 +210,12 @@
 <br />
 <br />
 <br />
+<script>
+jQuery(function($){
+   $("#datanasc").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+   $("#telvolun").mask("(99) 9999-9999");
+   $("#telinst").mask("(99) 9999-9999");
+});
+</script>
+</div>
 @endsection

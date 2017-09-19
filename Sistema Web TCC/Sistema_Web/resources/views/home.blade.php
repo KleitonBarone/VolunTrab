@@ -27,7 +27,7 @@
               duvidas solucionadas!</p>
             </div>
             <div class="card-action">
-              <a href="/ajuda">Clique aqui para obter ajuda!</a>
+              <a class="blue-text" href="/ajuda">Clique aqui para obter ajuda!</a>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
               <p>Está curioso sobre como esse projeto foi feito? De uma olhada na pagina "Sobre Nos"</p>
             </div>
             <div class="card-action">
-              <a href="/sobre-nos">Clique aqui para saber mais sobre o Projeto!</a>
+              <a class="blue-text" href="/sobre-nos">Clique aqui para saber mais sobre o Projeto!</a>
             </div>
           </div>
         </div>

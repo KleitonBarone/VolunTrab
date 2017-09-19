@@ -3,6 +3,7 @@
 @section('titulo', 'Login - Voluntrab')
 
 @section('content')
+<div class="grey lighten-4">
 <br />
 <br />
 <br />
@@ -11,7 +12,7 @@
     <div class="row">
         <div class="col s8 offset-s2">
             
-            <div class="card">
+            <div class="card z-depth-5">
                 <br>
                 <div class="row">
                     <div class="col s11 offset-s1">
@@ -55,7 +56,7 @@
 
                         <div class="row form-group">
                             <div class="col s8 offset-s4">
-                                <button type="submit" class="btn btn-primary yellow darken-2">
+                                <button type="submit" class="btn btn-primary blue darken-2">
                                     Logar
                                 </button>
                             </div>
@@ -76,4 +77,5 @@
 <br />
 <br />
 <br />
+</div>
 @endsection

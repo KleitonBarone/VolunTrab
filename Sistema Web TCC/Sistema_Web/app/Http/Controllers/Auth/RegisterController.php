@@ -64,16 +64,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if (isset($data['telvolun'])) {
+            $tel = 'telvolun';
+        } else
+        {
+            $tel = 'telinst';
+        }
 
-        return User::create([
+        if ($data['tipo'] == 1) {
+            //voluntario
+            return User::create([
             'name' => $data['name'],
             'tipo' => $data['tipo'],
-            'cpf' => $data['cpf'],
             'datanasc' => $data['datanasc'],
-            'cnpj' => $data['cnpj'],
-            'tel' => $data['tel'],
+            'tel' => $data["$tel"],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        } else {
+            //inst
+            return User::create([
+            'name' => $data['name'],
+            'tipo' => $data['tipo'],
+            'tel' => $data["$tel"],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+        }
+        
     }
 }

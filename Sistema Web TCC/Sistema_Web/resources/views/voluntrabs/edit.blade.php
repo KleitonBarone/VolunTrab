@@ -3,12 +3,25 @@
 @section('titulo', 'Editar Requesição de Trabalho Voluntário - Voluntrab')
 
 @section('content')
-        <div class="container">
+        <div class="container z-depth-5">
+            <div class="container">
     <div class="row center">
+        <br>
+        <br>
+        <div class="left-align">
+            <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.show', $voluntrab->id) }}">
+            <i class="material-icons left">arrow_back</i>Voltar
+            </a>
+        </div>
         <div class="col s12">
         <h1 class="center">Editar Requisição de Trabalho Voluntário </h1>
+        </div>
+    </div>
             <div class="divider"></div>
         <br>
+<div class="row center">
+<div class="col s12">
+
         <form enctype="multipart/form-data" action="{{ route('voluntrabs.update', $voluntrab->id) }}" method="post">
                     {{csrf_field()}}
 
@@ -16,7 +29,7 @@
 
                      <div class="file-field input-field">
                  <div class="btn">
-                 <span>File</span>
+                 <span>Imagem do Local</span>
                 <input type="file" name="avatar" id="avatar">
              </div>
              <div class="file-path-wrapper">
@@ -44,7 +57,7 @@
                    <br>
                     <div class="center">
                     <br>  
-                    <button class="waves-effect waves-light yellow darken-2 btn" type="submit">Editar</button>
+                    <button class="waves-effect waves-light blue darken-2 btn" type="submit">Editar</button>
                     </div>
         
                 </form>
@@ -53,11 +66,17 @@
     <br>
     <br>
     <br>
-    </div>
+    
     <br>
     <br>
     <br>
     <br>
         <br>
-   
+    </div>
+</div>
+   <script>
+jQuery(function($){
+   $("#data").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+});
+</script>
 @endsection

@@ -5,21 +5,29 @@
 @section('content')
 <!-- a fazer: pagina melhor -->
 
-        <div class="container">
+        <div class="container  z-depth-5">
+            <div class="container">
     <div class="row center">
-        <div class="col s12">
+            <div class="col s3">
+                <br>
+                <br>
+                    <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.index') }}">
+                    <i class="material-icons left">arrow_back</i>Voltar
+                    </a>
+                    </div>
+        <div class="col s9">
             <h2>Cadastrar Trabalho Voluntário</h2>
-            <div class="divider"> </div>
         </div>
     </div>
-<div class="row">
-    <div class="col s12">
+            <div class="divider"> </div>
+        
+<div class="row center">
         <form enctype="multipart/form-data" method="post" action="{{ route('voluntrabs.store') }}">
                     {{csrf_field()}}
 
                 <div class="file-field input-field">
                  <div class="btn">
-                 <span>File</span>
+                 <span>Imagem do Trabalho</span>
                 <input type="file" name="avatar" id="avatar">
              </div>
              <div class="file-path-wrapper">
@@ -43,23 +51,27 @@
                         <label for="desc">Descrição do Trabalho</label>
                     </div>
                 </div>
-                    <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}"
+                    <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}">
 
                     <div class="center">
-                    <button class="waves-effect waves-light yellow darken-2 btn" type="submit">Cadastrar Trabalho Voluntário</button>
+                    <button class="waves-effect waves-light blue darken-2 btn" type="submit">Cadastrar Trabalho Voluntário</button>
                     </div>
                    
                 </form>
-        </div>
-    </div>
     <br>
     <br>
     <br>
-    </div>
+</div>
     <br>
     <br>
     <br>
     <br>
         <br>
-   
+</div>
+</div>
+   <script>
+jQuery(function($){
+   $("#data").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+});
+</script>
 @endsection

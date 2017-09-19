@@ -5,10 +5,23 @@
 @section('content')
 <!-- a fazer: pagina melhor -->
 
-        <div class="container">
+        <div class="container z-depth-5">
+            <div class="container">
     <div class="row center">
-        <div class="col s12">
+
+            <div class="col s3">
+                <br>
+                <br>
+                    <a class="waves-effect waves-light btn blue" href="{{ route('users.show', $user->id) }}">
+                    <i class="material-icons left">arrow_back</i>Voltar
+                    </a>
+            </div>
+        <div class="col s9">
         <h1 class="center">Editar Perfil de {{$user->name}} </h1>
+        </div>
+        </div>
+        <div class="row center">
+            <div class="col s12">
             <div class="divider"></div>
         <br>
         <form enctype="multipart/form-data" action="{{ route('users.update', $user->id) }}" method="post">
@@ -18,7 +31,7 @@
 
             <div class="file-field input-field">
                  <div class="btn">
-                 <span>File</span>
+                 <span>Imagem de Perfil</span>
                 <input type="file" name="avatar" id="avatar">
              </div>
              <div class="file-path-wrapper">
@@ -50,8 +63,8 @@
                                 </div>
         @else
                     <div class="input-field">
-                        <input id="nome" class="form-control" type="text" name="nome" value="{{$user->nome}}" required autofocus>
-                        <label for="nome">Nome</label>
+                        <input id="name" class="form-control" type="text" name="name" value="{{$user->name}}" required autofocus>
+                        <label for="name">Nome</label>
                     </div>
 
                      <div class="input-field">
@@ -70,20 +83,28 @@
                    <br>
                     <div class="center">
                     <br>  
-                    <button class="waves-effect waves-light yellow darken-2 btn" type="submit">Editar</button>
+                    <button class="waves-effect waves-light blue darken-2 btn" type="submit">Editar</button>
                     </div>
         
                 </form>
         </div>
     </div>
     <br>
+
     <br>
     <br>
-    </div>
     <br>
+
     <br>
     <br>
     <br>
         <br>
-   
+    </div>
+</div>
+   <script>
+jQuery(function($){
+   $("#datanasc").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+   $("#tel").mask("(99) 9999-9999");
+});
+   </script>
 @endsection

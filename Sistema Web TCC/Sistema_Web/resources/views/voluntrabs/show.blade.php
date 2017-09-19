@@ -3,8 +3,16 @@
 @section('titulo', 'Ver Trabalho Requisitado - Voluntrab')
 
 @section('content')
-        <div class="container">
-    <div class="row">
+        <div class="container z-depth-5">
+            <div class="container">
+    <div class="row center">
+        <br>
+        <br>
+        <div class="left-align">
+                    <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.index') }}">
+                    <i class="material-icons left">arrow_back</i>Voltar
+                    </a>
+        </div>
         <div class="col s12">
                      <?php
           foreach ($users as $user){
@@ -15,6 +23,7 @@
           };
         ?>
              <h1 class="center">Trabalho requisitado por {{$criador}}</h1>
+             <div class="right-align">
              @if (Auth::user()->id == $voluntrab->user_id)
                 <form style="display: inline;" action="{{route('voluntrabs.destroy', $voluntrab->id)}}" method="post">
 
@@ -28,16 +37,21 @@
                 <br>
                 <br>
                 <a class="btn btn-primary" href="{{route('voluntrabs.edit', $voluntrab->id )}}">
-                        Editar Trabalho
+                        Editar Trabalho      
                 </a>
                 <br>
                 <br>
+            </div>
              @endif
+             </div>
+            </div>
+        <div class="row center">
+         <div class="col s12">   
              <div class="divider"></div>
              <br>
              <br>
              <div class="center">
-             <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="250" height="150" style="">
+             <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" class="center materialboxed" width="50%" height="50%">
              </div>
              <br>
              <br>
@@ -117,5 +131,5 @@
     <br>
     <br>
         <br>
-   
+    </div>
 @endsection

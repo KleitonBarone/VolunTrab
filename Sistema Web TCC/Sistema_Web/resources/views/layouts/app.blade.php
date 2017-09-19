@@ -12,29 +12,40 @@
 
     <!-- Styles -->
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
 
 </head>
 <body>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ asset('js/materialize.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    </script>
+
      <div class="navbar-fixed">
     <nav>
    <div class="nav-wrapper white">
    <div class="row">
          <div class="col s3 offset-s1">
-            <a href="/home" class="brand-logo yellow-text"><img src="{{ asset('image/logo.png') }}" height="60" width="60"></a>
+            <a href="/home" class="brand-logo yellow-text"><img src="{{ asset('image/logo2.png') }}" height="55" width="50"></a>
          </div>
       <ul id="nav-mobile" class="right">
 
 @if (Auth::guest())
-        <li><a href="{{ route('login') }}" class="waves-effect waves-yellow btn-flat">Login</a></li>
-        <li> <a href="{{ route('register') }}" class="waves-effect waves-yellow btn-flat">Cadastro</a></li>
+        <li><a href="{{ route('login') }}" class="waves-effect waves-blue btn-flat">Login</a></li>
+        <li> <a href="{{ route('register') }}" class="waves-effect waves-blue btn-flat">Cadastro</a></li>
 @else
 <li>
-<img src="{{ asset('avatars/' . Auth::user()->avatar) }}" width="75" height="75" style="">
+<img src="{{ asset('avatars/' . Auth::user()->avatar) }}" width="60" height="60" class="circle" style="">
 </li>
 <li>
 
-<a class='dropdown-button waves-effect waves-yellow btn-flat' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>
+<a class='dropdown-button waves-effect waves-blue btn-flat' href='#' data-activates='dropdown1'>{{ Auth::user()->name }}</a>
 
  
   <ul id='dropdown1' class='dropdown-content'>
@@ -60,7 +71,7 @@
 </div>
 <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper yellow darken-3">
+            <div class="nav-wrapper light-blue lighten-1">
 
                 <ul id="nav-mobile" class="left">
                     <li><a href="/home">Início</a></li>
@@ -106,23 +117,13 @@
         @yield('content')
     
 
-     <footer class="page-footer yellow darken-3">
-          <div class="footer-copyright yellow darken-3">
+     <footer class="page-footer light-blue lighten-1">
+          <div class="footer-copyright light-blue lighten-2">
             <div class="container">
             © 2017 VolunTrab.  Todos os Direitos Reservados.
             <a class="grey-text text-lighten-4 right" href="/home">Início</a>
             </div>
           </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script>
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
-    </script>
 </body>
 </html>

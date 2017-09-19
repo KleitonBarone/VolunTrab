@@ -44,7 +44,7 @@
         <div class="card-action">
           <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
+        <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
         </div>
       </div>
@@ -57,7 +57,13 @@
 <h4 class="center">Espere uma instituição requisitar um trabalho voluntário.</h4>
 @endforelse
         </div>
+        <br>
+    <br>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

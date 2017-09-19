@@ -24,6 +24,10 @@
       <h4 class="center">Este usuario é @if($user->tipo == 1) um Voluntário! @else uma Instiuição! @endif </h4>
       <br>
       <h5>Essas são suas Informações:</h5>
+        Imagem de Perfil:<br>
+        <div class="center" >
+        <img src="{{ asset('avatars/' . $user->avatar) }}" class="circle materialboxed" width="50%" height="50%" >
+        </div>
         <ul>
         @if($user->tipo == 1)
             <li>Nome:<strong> {{ $user->name }}</strong></li>
