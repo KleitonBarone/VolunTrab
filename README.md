@@ -4,12 +4,12 @@
 
 ## Integrantes do Grupo e suas respectivas funções: 
 
-* __Ana Laura__ - Design 
+* __Ana Laura dos Santos__ - Design 
 * __Vitor Marsão__ - Front end, Back end e BD 
-* __Kleiton__ - Front end, Back end e BD 
-* __Luan__ - Design, BD e Gerenciamento
+* __Kleiton Barone__ - Front end, Back end e BD 
+* __Luan Siqueira__ - Design, BD e Gerenciamento
 * __Lucas Naliato__ - Front end, Back end e BD 
-* __Nathalia__ - Design 
+* __Nathalia Mandeli__ - Design 
 * __Gabriel Villa__ - Front end 
-* __Stephanie__ - Design 
+* __Stephanie Orihuela__ - Design 
 * __Leonardo Fernandes__ - BD e Design
