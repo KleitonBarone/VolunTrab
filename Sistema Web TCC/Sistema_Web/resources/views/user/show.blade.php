@@ -2,6 +2,8 @@
 
 @section('titulo', 'Ver Perfil - Voluntrab')
 
+@section('perfil', 'active')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
 

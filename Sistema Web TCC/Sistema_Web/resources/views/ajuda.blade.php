@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('ajuda', 'active')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
 

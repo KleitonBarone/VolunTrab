@@ -2,7 +2,12 @@
 
 @section('titulo', 'Procurar Trabalho Voluntário - Voluntrab')
 
+@section('trabalhos', 'active')
+
 @section('content')
+<?php
+$count = 0 ;
+?>
         <div class="container">
     <div class="row center">
         <div class="col s12">
@@ -37,7 +42,17 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Trabalho Criado por: <strong>{{$criador}}</strong><br>
+          <p>
+          Trabalho Criado por: 
+          <a class="" href="{{route('users.show', $user->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser-form{{$count}}').submit();">
+                                            {{$criador}}
+          </a>
+        <form id="showuser-form{{$count}}" action="{{route('users.show', $user->id )}}" method="" style="display: none;">
+        {{csrf_field()}}
+        </form>
+          <br>
           Descrição: {{$voluntrab->desc}}
           </p>
         </div>
@@ -50,7 +65,9 @@
       </div>
     </div>
   </div>
-
+<?php
+$count++;
+?>
 
 @empty
 <h4 class="center">Sem Resultados!</h4>

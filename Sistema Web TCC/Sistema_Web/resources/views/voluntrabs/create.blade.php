@@ -2,6 +2,8 @@
 
 @section('titulo', 'Requisitar Trabalho Voluntário - Voluntrab')
 
+@section('trabalhos', 'active')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
 

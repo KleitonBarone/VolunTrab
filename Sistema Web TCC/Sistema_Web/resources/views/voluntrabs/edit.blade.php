@@ -2,6 +2,8 @@
 
 @section('titulo', 'Editar Requesição de Trabalho Voluntário - Voluntrab')
 
+@section('trabalhos', 'active')
+
 @section('content')
         <div class="container z-depth-5">
             <div class="container">

@@ -74,9 +74,9 @@
             <div class="nav-wrapper light-blue lighten-1">
 
                 <ul id="nav-mobile" class="left">
-                    <li><a href="/home">Início</a></li>
+                    <li class="@yield('inicio')"><a href="/home">Início</a></li>
                     @if (Auth::check())
-                    <li>
+                    <li class="@yield('perfil')">
        <a class="" href="{{route('users.show', Auth::user()->id )}}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('showuser-form').submit();">
@@ -87,7 +87,7 @@
         </form>
 
  </li>
-                    <li><a class="" href="{{route('users.view', Auth::user()->id )}}"
+                    <li class="@yield('trabrelacionado')"><a class="" href="{{route('users.view', Auth::user()->id )}}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('showtrab-form').submit();">
                                             @if (Auth::user()->tipo == 1 )
@@ -99,11 +99,11 @@
         <form id="showtrab-form" action="{{route('users.view', Auth::user()->id )}}" method="" style="display: none;">
         {{csrf_field()}}
         </form></li>
-        <li><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
+        <li class="@yield('trabalhos')"><a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a></li>
                     @endif
                     
-                    <li><a href="/ajuda">Ajuda</a></li>
-                    <li><a href="/sobre-nos">Sobre a Equipe</a></li>
+                    <li class="@yield('ajuda')"><a href="/ajuda">Ajuda</a></li>
+                    <li class="@yield('sobre')"><a href="/sobre-nos">Sobre a Equipe</a></li>
                     
                     
                     

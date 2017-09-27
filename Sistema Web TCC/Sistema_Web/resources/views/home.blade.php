@@ -2,6 +2,8 @@
 
 @section('titulo', 'Inicio - Voluntrab')
 
+@section('inicio', 'active')
+
 @section('content')
 <!-- a fazer: pagina melhor -->
 <div class="container z-depth-5">
@@ -19,7 +21,7 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
-              <img src="{{ asset('image/ajuda.jpg') }}">
+              <img src="{{ asset('image/ajuda.jpg') }}">''
               <span class="card-title">Ajuda</span>
             </div>
             <div class="card-content">

@@ -2,7 +2,12 @@
 
 @section('titulo', 'Trabalhos Participando - Voluntrab')
 
+@section('trabrelacionado', 'active')
+
 @section('content')
+<?php
+$count = 0;
+?>
 <!-- a fazer: pagina melhor -->
         <div class="container">
     <div class="row center">
@@ -43,20 +48,32 @@ foreach ($users as $criador){
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Trabalho Criado por: <strong>{{$dono}}</strong><br>
+          <p>
+          Trabalho Criado por: 
+          <a class="" href="{{route('users.show', $criador->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser{{$count}}-form').submit();">
+                                            {{$dono}}
+          </a>
+        <form id="showuser{{$count}}-form" action="{{route('users.show', $criador->id )}}" method="" style="display: none;">
+        {{csrf_field()}}
+        </form>
+          <br>
           Descrição: {{$voluntrab->desc}}
           </p>
         </div>
         <div class="card-action">
           <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
+        <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
         </div>
       </div>
     </div>
   </div>
-
+<?php
+$count++;
+?>
 @endif
 @endforeach
 @if($option == 0)
@@ -92,14 +109,24 @@ foreach ($users as $criador){
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Trabalho Criado por: <strong>{{$user->name}}</strong><br>
+          <p>
+          Trabalho Criado por: 
+          <a class="" href="{{route('users.show', $user->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser{{$count}}-form').submit();">
+                                            {{$user->name}}
+          </a>
+        <form id="showuser{{$count}}-form" action="{{route('users.show', $user->id )}}" method="" style="display: none;">
+        {{csrf_field()}}
+        </form>
+          <br>
           Descrição: {{$voluntrab->desc}}
           </p>
         </div>
         <div class="card-action">
           <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light btn-flat yellow-text text-darken-2" type="submit">Visualizar esta Requisição</button>
+        <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">Visualizar esta Requisição</button>
         </form>
         </div>
       </div>

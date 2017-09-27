@@ -2,7 +2,12 @@
 
 @section('titulo', 'Ver Trabalho Requisitado - Voluntrab')
 
+@section('trabalhos', 'active')
+
 @section('content')
+<?php
+$count = 0;
+?>
         <div class="container z-depth-5">
             <div class="container">
     <div class="row center">
@@ -22,7 +27,17 @@
             };
           };
         ?>
-             <h1 class="center">Trabalho requisitado por {{$criador}}</h1>
+             <h1 class="center">Trabalho requisitado por
+             <a class="" href="{{route('users.show', $user->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser-form').submit();">
+                                            {{$criador}}
+                        </a>
+            <form id="showuser-form" action="{{route('users.show', $user->id )}}" method="" style="display: none;">
+            {{csrf_field()}}
+            </form>
+              
+              </h1>
              <div class="right-align">
              @if (Auth::user()->id == $voluntrab->user_id)
                 <form style="display: inline;" action="{{route('voluntrabs.destroy', $voluntrab->id)}}" method="post">
@@ -108,10 +123,22 @@
                     <tbody>
                     @foreach ($voluntrab->user as $voluntrabuser)
                     <tr>
-                        <td>{{ $voluntrabuser->name }}</td>
+                        <td>
+                        <a class="" href="{{route('users.show', $voluntrabuser->id )}}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('showuser{{$count}}-form').submit();">
+                                            {{$voluntrabuser->name}}
+                        </a>
+                        <form id="showuser{{$count}}-form" action="{{route('users.show', $voluntrabuser->id )}}" method="" style="display: none;">
+                        {{csrf_field()}}
+                        </form>
+                        </td>
                         <td>{{ $voluntrabuser->tel }}</td>
                         <td>{{ $voluntrabuser->datanasc }}</td>
                     </tr>
+                    <?php
+                        $count++;
+                    ?>
                     @endforeach
                     </tbody>
                     </table>
@@ -131,5 +158,6 @@
     <br>
     <br>
         <br>
+    </div>
     </div>
 @endsection

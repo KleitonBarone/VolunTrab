@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('perfil', 'active')
+
 @section('titulo', 'Editar Perfil - Voluntrab')
 
 @section('content')
