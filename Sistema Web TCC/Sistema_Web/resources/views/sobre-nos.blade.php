@@ -3,7 +3,7 @@
 @section('sobre', 'active')
 
 @section('content')
-<!-- a fazer: pagina melhor -->
+<!-- Pagina Sobre os Integrantes do TCC -->
 
         <div class="container">
     <div class="row center">

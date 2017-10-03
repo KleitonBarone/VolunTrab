@@ -37,7 +37,7 @@
 <div class="slider fullscreen">
     <ul class="slides">
       <li>
-        <img src="{{ asset('image/imagem1.jpg') }}"> <!-- random image -->
+        <img src="{{ asset('image/imagem1.jpg') }}"> 
         <div class="caption center-align">
           <h3 class="white-text">Voluntrab</h3>
           <h5 class="light white-text text-lighten-3">Ajudando você a ajudar os outros!<br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -45,7 +45,7 @@
         </div>
       </li>
       <li>
-        <img src="{{ asset('image/imagem2.jpeg') }}"> <!-- random image -->
+        <img src="{{ asset('image/imagem2.jpeg') }}"> 
         <div class="caption center-align">
           <h3 class="black-text">Seja um Voluntário</h3>
           <h5 class="light black-text ">Ajude as pessoas a serem felizes!<br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -53,7 +53,7 @@
         </div>
       </li>
       <li>
-        <img src="{{ asset('image/imagem3.jpg') }}"> <!-- random image -->
+        <img src="{{ asset('image/imagem3.jpg') }}"> 
         <div class="caption center-align">
           <h3 class="black-text">Cadastre sua Instituição</h3>
           <h5 class="light black-text ">Peça ajuda e alcançe a todos!<br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -61,7 +61,7 @@
         </div>
       </li>
       <li>
-        <img src="{{ asset('image/imagem4.jpg') }}"> <!-- random image -->
+        <img src="{{ asset('image/imagem4.jpg') }}"> 
         <div class="caption center-align">
           <h3 class="white-text">Começe já!</h3>
           <h5 class="light white-text text-lighten-3">Você pode começar a usar o Voluntrab agora mesmo! <br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -71,93 +71,80 @@
     </ul>
   </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<br /><br /><br /><br /><br />
   <div class="parallax-container">
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<br /><br /><br /><br /> <br /><br />
 
-  <div class="section white">
-    <div class="row container">
-      <div class="col s12">
+    <div class="section white">
+      <div class="row container">
+        <div class="col s12">
           <h3 class="center">
             <img height="20%" width="20%" src="{{ asset('image/o-que-e.png') }}">
           </h3>
-       <h3 class="center">O que é?</h3>
-       <br>
-      <h5 class="center black-text text-darken-3 lighten-3">
-      Com o Voluntrab você pode facilmente encontrar e participar de projetos voluntários,
-      ou seja, sem mais perder tempo procurando e tendo que preparar papeis! Com Voluntrab 
-      você vai direto ao assunto: Ajudar as pessoas!
-      </h5>
-      </div>
-      
+          <h3 class="center">O que é?</h3>
+          <br />
+          <h5 class="center black-text text-darken-3 lighten-3">
+            Com o Voluntrab você pode facilmente encontrar e participar de projetos voluntários,
+            ou seja, sem mais perder tempo procurando e tendo que preparar papeis! Com Voluntrab 
+            você vai direto ao assunto: Ajudar as pessoas!
+          </h5>
+        </div>
     </div>
   </div>
 
 <div class="parallax-container">
       <div class="parallax">
-      
-      <img src="{{ asset('image/imagem-parallax.jpg') }}">
-
+        <img src="{{ asset('image/imagem-parallax.jpg') }}">
       </div>
-    </div>
+</div>
 
-     <div class="section white">
-    <div class="row container">
-      <h2 class="header center"></h2>
-      
+<div class="section white">
+  <div class="row container">
+    <h2 class="header center"></h2>
       <div class="col s4">
-          <h1 class="center yellow-text">
-            <img height="50%" width="50%" src="{{ asset('image/rapido.png') }}">
-          </h1>
-       <h4 class="center">Rápido</h4>
-       <br>
-      <p class="black-text text-darken-3 lighten-3">
-      O Voluntrab foi criado para você conseguir se cadastrar 
-      rapidamente e começar a usar o sistema, assim ajudando
-      as pessoas!
-      </p>
+        <h1 class="center yellow-text">
+          <img height="50%" width="50%" src="{{ asset('image/rapido.png') }}">
+        </h1>
+        <h4 class="center">Rápido</h4>
+        <br />
+
+        <p class="black-text text-darken-3 lighten-3">
+          O Voluntrab foi criado para você conseguir se cadastrar 
+          rapidamente e começar a usar o sistema, assim ajudando
+          as pessoas!
+        </p>
+
       </div>
       <div class="col s4">
           <h1 class="center yellow-text">
             <img height="50%" width="50%" src="{{ asset('image/facil.png') }}">
           </h1>
        <h4 class="center">Fácil</h4>
-       <br>
-      <p class="black-text text-darken-3 lighten-3">
-      O Design facil de se utilizar torna tudo mais fácil, assim, mesmo
-      nao tendo conhecimento sobre computadores, é possivel usar e ajudar os outros!
-      </p>
+       <br />
+        <p class="black-text text-darken-3 lighten-3">
+          O Design facil de se utilizar torna tudo mais fácil, assim, mesmo
+          nao tendo conhecimento sobre computadores, é possivel usar e ajudar os outros!
+        </p>
       </div>
       <div class="col s4">
         <h1 class="center yellow-text">
           <img height="50%" width="50%" src="{{ asset('image/suba-de-nivel.png') }}">
         </h1>
-       <h4 class="center">Suba de nível</h4>
-       <br>
-      <p class="black-text text-darken-3 lighten-3">
-      Ao utilizar o sistema é possivel subir de nivel, e então além de ajudar os outros
-      e fazer o bem, você vai ser reconhecido por isso!
-      </p>
+        <h4 class="center">Suba de nível</h4>
+        <br />
+        <p class="black-text text-darken-3 lighten-3">
+          Ao utilizar o sistema é possivel subir de nivel, e então além de ajudar os outros
+          e fazer o bem, você vai ser reconhecido por isso!
+        </p>
       </div>
     </div>
-  </div>
+</div>
 
 
-<div class="parallax-container">
+    <div class="parallax-container">
       <div class="parallax">
-      
-      <img src="{{ asset('image/imagem-parallax3.jpg') }}">
-
+        <img src="{{ asset('image/imagem-parallax3.jpg') }}">
       </div>
     </div>
 
@@ -165,10 +152,11 @@
         <div class="footer-copyright light-blue lighten-2">
           <div class="container">
           © 2017 VolunTrab.  Todos os Direitos Reservados.
-         
           </div>
         </div>
   </footer>
+
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

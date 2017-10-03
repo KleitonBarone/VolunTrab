@@ -5,80 +5,85 @@
 @section('trabalhos', 'active')
 
 @section('content')
-        <div class="container z-depth-5">
-            <div class="container">
-    <div class="row center">
-        <br>
-        <br>
-        <div class="left-align">
-            <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.show', $voluntrab->id) }}">
-            <i class="material-icons left">arrow_back</i>Voltar
-            </a>
-        </div>
-        <div class="col s12">
-        <h1 class="center">Editar Requisição de Trabalho Voluntário </h1>
-        </div>
-    </div>
-            <div class="divider"></div>
-        <br>
-<div class="row center">
-<div class="col s12">
+<!-- Pagina Para Editar uma Requisição de Trabalho -->
 
-        <form enctype="multipart/form-data" action="{{ route('voluntrabs.update', $voluntrab->id) }}" method="post">
+<div class="container z-depth-5">
+    <div class="container">
+        <div class="row center">
+            <br /><br />
+
+            <!-- Botão para voltar para pagina onde mostra o trabalho -->
+            <div class="left-align">
+                <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.show', $voluntrab->id) }}">
+                    <i class="material-icons left">arrow_back</i>Voltar
+                </a>
+            </div>
+
+            <!-- Titulo -->
+            <div class="col s12">
+                <h1 class="center">Editar Requisição de Trabalho Voluntário</h1>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <br />
+
+        <div class="row center">
+            <div class="col s12">
+
+                <form enctype="multipart/form-data" action="{{ route('voluntrabs.update', $voluntrab->id) }}" method="post">
                     {{csrf_field()}}
-
                     <input type="hidden" name="_method" value="put">
 
-                     <div class="file-field input-field">
-                 <div class="btn">
-                 <span>Imagem do Local</span>
-                <input type="file" name="avatar" id="avatar">
-             </div>
-             <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-             </div>
-              </div>
+                    <!-- Campo Imagem para o Trabalho -->
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Imagem do Local</span>
+                            <input type="file" name="avatar" id="avatar">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
 
-                                <div class="row">
-                    <div class="input-field col s12">
+                    <!-- Campo Data -->
+                    <div class="row">
+                        <div class="input-field col s12">
                             <input id="data" type="text" class="validate" name="data" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                             title="Escreva a data desse modo: XX/XX/XXXX" placeholder="XX/XX/XXXX" value="{{$voluntrab->data}}" required>
-                            <label for="data">Data do Trabalho</label>
-                                                           
+                            <label for="data">Data do Trabalho</label>                                 
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    
-                    <div class="input-field">
-                        <textarea id="desc" class="validate materialize-textarea" name="desc"  required>{{$voluntrab->desc}}</textarea>
-                        <label for="desc">Descrição do Trabalho</label>
+                    <!-- Campo Descrição do Trabalho -->
+                    <div class="row">
+                        <div class="input-field">
+                            <textarea id="desc" class="validate materialize-textarea" name="desc"  required>{{$voluntrab->desc}}</textarea>
+                            <label for="desc">Descrição do Trabalho</label>
+                        </div>
                     </div>
-                </div>
 
-                   <br>
+                    <br />
+                    <!-- Botão Enviar -->
                     <div class="center">
-                    <br>  
-                    <button class="waves-effect waves-light blue darken-2 btn" type="submit">Editar</button>
+                        <br />  
+                        <button class="waves-effect waves-light blue darken-2 btn" type="submit">Editar</button>
                     </div>
         
                 </form>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-        <br>
+    <br /><br /><br /><br /><br /><br /><br /><br />
     </div>
 </div>
-   <script>
-jQuery(function($){
-   $("#data").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
-});
+
+<!-- Mascara HTML para campo Data -->
+<script>
+    jQuery(function($){
+        $("#data").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+    });
 </script>
+
 @endsection
