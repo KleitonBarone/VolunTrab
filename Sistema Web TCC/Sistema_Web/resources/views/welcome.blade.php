@@ -37,9 +37,9 @@
 <div class="slider fullscreen">
     <ul class="slides">
       <li>
-        <img src="{{ asset('image/imagem1.jpg') }}"> 
+        <img src="{{ asset('image/imagem1.jpg') }}">
         <div class="caption center-align">
-          <h3 class="white-text">Voluntrab</h3>
+          <h3 class="white-text card-panel center-align">Voluntrab</h3>
           <h5 class="light white-text text-lighten-3">Ajudando você a ajudar os outros!<br /> <br /> <br /> <br /> <br /> <br /> <br />
           <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a></h5>
         </div>

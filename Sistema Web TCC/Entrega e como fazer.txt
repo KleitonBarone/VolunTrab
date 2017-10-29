@@ -1,44 +1,20 @@
-
-
-quarto
-
-Admin
-
-fazer uma pagina inicial só para o admin mostrando as informações gerais e um menu diferente, para mostrar todos os usuarios, instituições, denuncias,etc
-
-
-
-
-
-
-
-segundo
-
-
-Sistema de doações
-
-A intituição vai requisitar a doação de um objeto, dando uma data e um local, depois disso ele pode consluir sua requisição, e avaliar os ajudantes.
-
-
-
-
-
-
 Primeiro
 
 Sistema de trabalhos concluidos
 
 assim como as doações quando completadas vai ser possivel avaliar cada participante e dar um comentário.
 
+tutorial:
+1-fazer tabela avalia usuario_insituicao com pivot nota e comentário, 
+2-fazer tabela de usuario_trabalho completado , excluindo no usuario_trabvolunt ao mesmo tempo
+3-exibir as avaliações no perfil(segundo)
+
+1- tabela, controller, routes, Model
+2- pagina
 
 
 
-
-
-
-
-
-Terceiro
+Segundo
 
 Usuario pode ver avaliações dadas a ele em seu perfil
 
@@ -46,9 +22,37 @@ em seu perfil o usuario pode ver sua nota media, e apos clicar nela pode ver tod
 
 
 
+Terceiro
+
+
+Sistema de doações
+
+A intituição vai requisitar a doação de um objeto, dando uma data e um local, depois disso ele pode consluir sua requisição, e avaliar os ajudantes.
+tutorial:
+1-usuario instituição cria requisições de doação
+2-igual o de trabalho voluntário
+3-instituição confirma a doação
+
+
+
+quarto
+
+Admin
+
+fazer uma pagina inicial só para o admin mostrando as informações gerais e um menu diferente, para mostrar todos os usuarios, instituições, denuncias,etc
+1-fazer user tipo 3
+2- botar um menu que mostra td
+3- botar o bagui de denunciar
+4- excluir pessoas denunciadas
+
 
 quinto
 
 Siatema de conquistas
 
 Ao fazer ações no website o usuario pode ter conquistas, e vai ter uma pagina de ranking de conquistas, onde quem tiver mais fica em primeiro.
+1- criar tabela de conquistas
+2- enchar a tabela com seeds
+3- botar na tabela usuarios os dados e qualdo completar aciona os achieviments
+4- mostra os achieviments adquiridos e os nao adquiridos em baixo, clickar em cima mostra os achieviments
+5- tem uma tabela de ranking de quem completou mais achieviments

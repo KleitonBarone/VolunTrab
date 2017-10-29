@@ -93,8 +93,9 @@ $count = 0;
         @if($option == 0)
           <h3 class="center">
             Este usuario não se cadastrou em nenhum trabalho voluntário ainda,
-            vá até o menu "Trabalhos Voluntários" para escolher um de seu interesse!
+            vá até o menu "<a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>" para escolher um de seu interesse!
           </h3>
+          <br /><br /><br /><br />
         @endif
 
 
@@ -158,9 +159,10 @@ $count = 0;
                 <!-- Se ele não achar nada ele mostra essa mensagem -->
                 @if($option == 0)
                   <h3 class="center">
-                  Esta instituição não requisitou nenhum trabalho voluntário ainda, vá até o menu "Trabalhos
-                  Voluntários" para requisitar um!
+                  Esta instituição não requisitou nenhum trabalho voluntário ainda,
+                  vá até o menu "<a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>" para requisitar um!
                   </h3>
+                  <br /><br /><br /><br />
                 @endif
 
               @endif

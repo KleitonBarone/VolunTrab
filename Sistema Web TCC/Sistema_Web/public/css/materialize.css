@@ -4707,10 +4707,11 @@ small {
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
-  padding: 24px;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: #fff;
+  padding: 10px;
+  width: 35%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: rgba(0, 150, 255, 0.25);
 }
 
 .card {

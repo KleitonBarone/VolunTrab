@@ -29,6 +29,7 @@ $count = 0;
           foreach ($users as $user){
             if($user->id == $voluntrab->user_id){
                 $criador = $user->name;
+                $criadorid = $user->id;
                 break;
             };
           };
@@ -39,7 +40,7 @@ $count = 0;
                 document.getElementById('showuser-form').submit();">
                     {{$criador}}
                 </a>
-                <form id="showuser-form" action="{{route('users.show', $user->id )}}" method="" style="display: none;">
+                <form id="showuser-form" action="{{route('users.show', $criadorid )}}" method="" style="display: none;">
                     {{csrf_field()}}
                 </form> 
             </h1>
