@@ -31,6 +31,8 @@ Route::group(['middleware'=>'auth'], function(){
 
 Route::resource('voluntrabs', 'VoluntrabController');
 
+Route::resource('doacaos', 'DoacaoController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //show user
@@ -56,5 +58,33 @@ Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuse
 //pagina view trabalhos de um usuario
 Route::get('user/{user}/trabalhos', ['uses' => 'VoluntrabUser@view',
 'as'=> 'users.view']);
+
+//pagina para avaliar os usuarios
+Route::get('avalia', ['uses' => 'AvaliaUser@avaliauser',
+'as'=> 'user.avalia']);
+
+//post para adicionar avaliação
+Route::post('avalia', ['uses' => 'AvaliaUser@addavalia',
+'as'=> 'user.addavalia']);
+
+//post para setar o trabalho como completado
+Route::post('/voluntrabs/complete/{voluntrab}', ['uses' => 'VoluntrabController@complete',
+'as'=> 'voluntrab.complete']);
+
+//post para setar a doacao como completado
+Route::post('/doacaos/complete/{doacao}', ['uses' => 'DoacaoController@complete',
+'as'=> 'doacao.complete']);
+
+//add user na doação
+Route::post('doacaos/{doacao}', ['uses' => 'DoacaoUser@adduser',
+'as'=> 'doacaos.adduser']);
+
+//remove user na doação
+Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuser',
+'as'=> 'voluntrabs.deleteuser']);
+
+//pagina view doacao de um usuario
+Route::get('user/{user}/doacaos', ['uses' => 'DoacaoUser@view',
+'as'=> 'doacaos.view']);
 
 });

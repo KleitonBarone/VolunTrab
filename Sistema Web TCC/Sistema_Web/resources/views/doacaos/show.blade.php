@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('titulo', 'Ver Trabalho Requisitado - Voluntrab')
+@section('titulo', 'Visualizar Doação - Voluntrab')
 
-@section('trabalhos', 'active')
+@section('doacoes', 'active')
 
 @section('content')
-<!-- Pagina de Mostrar Cada Trabalho -->
+<!-- Pagina de Mostrar Cada Requisição de Doação -->
 
-<!-- Contador para contar o numero de usuarios presentes no trabalho -->
+<!-- Contador para contar o numero de usuarios participantes da Doação -->
 <?php
 $count = 0;
 ?>
@@ -18,7 +18,7 @@ $count = 0;
         <div class="row center">
             <br /><br />
             <div class="left-align">
-                <a class="waves-effect waves-light btn blue" href="{{ route('voluntrabs.index') }}">
+                <a class="waves-effect waves-light btn blue" href="{{ route('doacaos.index') }}">
                     <i class="material-icons left">arrow_back</i>Voltar
                 </a>
             </div>
@@ -27,7 +27,7 @@ $count = 0;
         <!-- foreach para achar o criador do trabalho -->
         <?php
           foreach ($users as $user){
-            if($user->id == $voluntrab->user_id){
+            if($user->id == $doacao->user_id){
                 $criador = $user->name;
                 $criadorid = $user->id;
                 break;
@@ -36,18 +36,18 @@ $count = 0;
         ?>
             <!-- titulo do trabalho -->
             <h2 class="center">
-            {{$voluntrab->titulo}}
+            Doação de {{$doacao->item}}
             </h2>
 
             <div class="right-align">
 
                 <!-- Se ele for o criador do projeto da para editar ou deletar o trabalho --> 
-                @if (Auth::user()->id == $voluntrab->user_id)
+                @if (Auth::user()->id == $doacao->user_id)
 
                     <div class="row">
 
                         <div class="col s3">
-                            <a class="btn btn-primary" href="{{route('voluntrabs.edit', $voluntrab->id )}}">
+                            <a class="btn btn-primary" href="{{route('doacaos.edit', $doacao->id )}}">
                             Editar     
                             </a>
                         </div>
@@ -56,7 +56,7 @@ $count = 0;
                         </div>
 
                         <div class="col s3">
-                                <form style="display: inline;" action="{{route('voluntrabs.destroy', $voluntrab->id)}}" method="post">
+                                <form style="display: inline;" action="{{route('doacaos.destroy', $doacao->id)}}" method="post">
                                     {{csrf_field()}}
     
                                     <input type="hidden" name="_method" value="delete">
@@ -75,8 +75,8 @@ $count = 0;
         </div>
 
         <div class="divider"></div>
-        @if ($voluntrab->status == 1)
-            <h3 class="green-text center">Esse Trabalho foi Concluido!</h3>
+        @if ($doacao->status == 1)
+            <h3 class="green-text center">Essa Doação foi Concluida!</h3>
         @endif
         <div class="row">
             <div class="col s12"> 
@@ -86,14 +86,14 @@ $count = 0;
                         
                         <br /><br />
                         <div class="center">
-                            <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" class="materialboxed responsive-img" width="" height="">
+                            <img src="{{ asset('avatarsdoacao/' . $doacao->avatar) }}" class="materialboxed responsive-img" width="" height="">
                         </div>
                         <br /><br />
                     </div>
 
                     <div class="col s6" style="margin-top:5%;">
 
-                <h5>Trabalho requisitado por
+                <h5>Doação requisitada por
                 <a class="" href="{{route('users.show', $user->id )}}"
                 onclick="event.preventDefault();
                 document.getElementById('showuser-form').submit();">
@@ -103,9 +103,9 @@ $count = 0;
                     {{csrf_field()}}
                 </form></h5>
 
-                <h5>Data da realização do trabalho: <strong>{{$voluntrab->data}}</strong></h3>
+                <h5>Data de Entrega da Doação: <strong>{{$doacao->data}}</strong></h3>
 
-                <p><h5>Descrição do Trabalho:</h5> {{$voluntrab->desc}} </p>
+                <p><h5>Descrição da Doação:</h5> {{$doacao->desc}} </p>
                     </div>
                 
                 </div>
@@ -113,18 +113,18 @@ $count = 0;
                 <!-- Sistema hit para ver se o usuario participa do trabalho em questão -->
                 @if(Auth::user()->tipo == 1)
                         <?php $hit = 0; ?>
-                        @foreach ($voluntrab->user as $voluntrabuser)
-                                @if(Auth::user()->id == $voluntrabuser->id)
+                        @foreach ($doacao->user as $doacaouser)
+                                @if(Auth::user()->id == $doacaouser->id)
                                   <?php $hit = 1; ?>
                                 @endif
                         @endforeach
                 <!-- para participar o trabalho tem que estar em andamento (nao pode estar completo) -->
-                @if ( $voluntrab->status == 0 )
+                @if ( $doacao->status == 0 )
                 <!-- Se ele não participar, aparece o botão para ele participar -->
                     @if ($hit === 0)
                     <br /><br />
 
-                        <form action="{{route('voluntrabs.adduser', $voluntrab->id)}}" method="post">
+                        <form action="{{route('doacaos.adduser', $doacao->id)}}" method="post">
                             {{csrf_field()}}
                             <input type="hidden" id="users" name="users" value="{{ Auth::user()->id }}" >
                             <div class="center">
@@ -136,14 +136,14 @@ $count = 0;
                     @else
                         <br /><br />
                         <div class="center">
-                            <button class="btn disabled">Você já está participando desse trabalho!</button>
+                            <button class="btn disabled">Você já está participando dessa Doação!</button>
                         </div>
                         <br /><br />
                     @endif
                 @else
                     <br /><br />
                         <div class="center">
-                            <button class="btn disabled">Esse Trabalho já foi Concluído!</button>
+                            <button class="btn disabled">Essa Doação já foi Concluída!</button>
                         </div>
                     <br /><br />
                 @endif
@@ -151,13 +151,13 @@ $count = 0;
                 @endif
                     <div class="divider"></div>
                     <!-- se tiver alguem participando do trabalho ele lista elas -->
-                    @if(count($voluntrab->user) > 0)
+                    @if(count($doacao->user) > 0)
                         <br />
                         <h4>
-                        @if($voluntrab->status == 0)
-                        Pessoas que estão participando desse trabalho:
+                        @if ($doacao->status == 0)
+                        Pessoas que estão participando dessa Doação:
                         @else
-                        Pessoas que participaram desse trabalho:
+                        Pessoas que participaram dessa Doação:
                         @endif
                         </h4>
                         <br />
@@ -170,20 +170,20 @@ $count = 0;
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($voluntrab->user as $voluntrabuser)
+                                @foreach ($doacao->user as $doacaouser)
                                     <tr>
                                         <td>
-                                            <a class="" href="{{route('users.show', $voluntrabuser->id )}}"
+                                            <a class="" href="{{route('users.show', $doacaouser->id )}}"
                                             onclick="event.preventDefault();
                                             document.getElementById('showuser{{$count}}-form').submit();">
-                                                {{$voluntrabuser->name}}
+                                                {{$doacaouser->name}}
                                             </a>
-                                            <form id="showuser{{$count}}-form" action="{{route('users.show', $voluntrabuser->id )}}" method="" style="display: none;">
+                                            <form id="showuser{{$count}}-form" action="{{route('users.show', $doacaouser->id )}}" method="" style="display: none;">
                                             {{csrf_field()}}
                                             </form>
                                         </td>
-                                        <td>{{ $voluntrabuser->tel }}</td>
-                                        <td>{{ $voluntrabuser->datanasc }}</td>
+                                        <td>{{ $doacaouser->tel }}</td>
+                                        <td>{{ $doacaouser->datanasc }}</td>
                                     </tr>
                                     <?php
                                     $count++;
@@ -194,20 +194,20 @@ $count = 0;
                     <!-- Se não tiver ninguem participando do trabalho essa mensagem é mostrada -->
                     @else
                         <br />
-                        <h5 class ="center"> Não há ninguem participando desse trabalho ainda.</h5>
+                        <h5 class ="center"> Não há ninguem participando dessa Doação ainda.</h5>
                         <br />
                     @endif
 
                     <br /> <br />
                     <!-- Se ele for o criador do trabalho, ele pode concluir-lo -->
-                    @if (Auth::user()->id == $voluntrab->user_id)
-                        @if($voluntrab->status == 0)
-                    <form action="{{route('voluntrab.complete', $voluntrab->id)}}" method="post">
+                    @if (Auth::user()->id == $doacao->user_id)
+                        @if($doacao->status == 0)
+                    <form action="{{route('doacao.complete', $doacao->id)}}" method="post">
                             {{csrf_field()}}
                            
                            
                             <div class="center">
-                                <button class="waves-effect waves-light blue btn" type="submit">Concluir o Trabalho!</button>
+                                <button class="waves-effect waves-light blue btn" type="submit">Concluir a Doação!</button>
                             </div>
                             <br /><br /> 
                     </form>

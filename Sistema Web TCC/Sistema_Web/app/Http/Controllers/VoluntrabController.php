@@ -41,8 +41,10 @@ class VoluntrabController extends Controller
     {
         $voluntrab = new Voluntrab();
         
+                $voluntrab->titulo = $request->titulo;
                 $voluntrab->data = $request->data;
                 $voluntrab->desc = $request->desc;
+                $voluntrab->status = 0;
                 $voluntrab->user_id = $request->user_id;
 
                 if($request->hasFile('avatar')){
@@ -90,6 +92,7 @@ class VoluntrabController extends Controller
      */
     public function update(Request $request, Voluntrab $voluntrab)
     {
+        $voluntrab->titulo = $request->titulo;
         $voluntrab->data = $request->data;
         $voluntrab->desc = $request->desc;
 
@@ -116,5 +119,16 @@ class VoluntrabController extends Controller
     {
         $voluntrab->delete();
         return redirect('/voluntrabs');
+    }
+
+    public function complete(Voluntrab $voluntrab)
+    {
+        $voluntrab->status = 1;
+
+        $voluntrab->save();
+
+        return redirect('/voluntrabs');
+
+
     }
 }

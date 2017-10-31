@@ -128,6 +128,30 @@
                     
                     </li>
 
+                    <li class="@yield('doacaos')">
+                    
+                    <a href="{{ route('doacaos.index') }}">Doações</a>
+                    
+                    </li>
+
+                    <li class="@yield('doacaorelacionado')">
+
+                        <a class="" href="{{route('doacaos.view', Auth::user()->id )}}"
+                        onclick="event.preventDefault();
+                        document.getElementById('showdoacao-form').submit();">
+                            @if (Auth::user()->tipo == 1 )
+                            Doações Participando
+                            @else
+                            Doações Requisitadas
+                            @endif
+                        </a>
+                        <form id="showdoacao-form" action="{{route('doacaos.view', Auth::user()->id )}}" method="" style="display: none;">
+                            {{csrf_field()}}
+                        </form>
+
+                    </li>
+
+
                     @endif
                     
                     <li class="@yield('ajuda')">

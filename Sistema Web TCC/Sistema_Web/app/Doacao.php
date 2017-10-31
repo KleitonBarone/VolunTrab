@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Voluntrab extends Model
+class Doacao extends Model
 {
     protected $fillable = [
-        'data', 'desc', 'titulo', 'status',
+        'data', 'desc', 'item', 'status', 'local',
     ];
 
     public function creator()
@@ -16,8 +16,7 @@ class Voluntrab extends Model
     }
 
     public function user() {
-    return $this->belongsToMany('App\User')
+    return $this->belongsToMany('App\User', 'user_doacao')
     ->withTimestamps();
     }
-
 }

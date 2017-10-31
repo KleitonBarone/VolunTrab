@@ -1,22 +1,22 @@
 @extends('layouts.app')
 
-@section('titulo', 'Trabalhos Participando - Voluntrab')
+@section('titulo', 'Doações Participando - Voluntrab')
 
-@section('trabrelacionado', 'active')
+@section('doacaorelacionado', 'active')
 
 @section('content')
 <?php
 $count = 0;
 ?>
-<!-- Pagina de Visualizar os os trabalhos perticipando e caso for uma instituição ver o trabalhos criados por ela -->
+<!-- Pagina de Visualizar as Doações participando e caso for uma instituição ver as Doações criados por ela -->
 <div class="container">
   <div class="row center">
     <div class="col s12">
 
 
-      <!-- Se o usuario for voluntário ele vai mostrar os trabalhos em que ele está cadastrado -->
+      <!-- Se o usuario for voluntário ele vai mostrar as Doações em que ele está cadastrado -->
       @if($user->tipo == 1)
-      <h2>Você se cadastrou nos seguintes Trabalhos:</h2>
+      <h2>Você se cadastrou nas seguintes Doações:</h2>
 
       <div class="divider"></div>
 
@@ -33,46 +33,46 @@ $count = 0;
   </div>
   <div class="row">
     <div class="col s12">
-      <!-- Sistema de Hit para ver se o Trabalho sendo analizado
+      <!-- Sistema de Hit para ver se a Doação sendo analizada
       é um no qual o usuario está cadastrado -->
 
-      <!-- trabalhos em andamento -->
+      <!-- doações em andamento -->
       <div id="test1" class="col s12">
 
       <?php $option = 0; ?>
-      @foreach ($voluntrabs as $voluntrab)
-        @if ($voluntrab->status == 0)
+      @foreach ($doacaos as $doacao)
+        @if ($doacao->status == 0)
         <?php $hit = 0; ?>
-        @foreach ($voluntrab->user as $voluntrabuser)
-          @if($user->id == $voluntrabuser->id)
+        @foreach ($doacao->user as $doacaouser)
+          @if($user->id == $doacaouser->id)
             <?php $hit = 1; ?>
           @endif
         @endforeach
 
         <!-- Se o hit der certo, ele passa por aqui e acha o 
-        nome do criador do trabalho-->
+        nome do criador da Doação-->
         @if ($hit === 1)
           <?php
           $option = 1;
           foreach ($users as $criador){
-            if($criador->id == $voluntrab->user_id){
+            if($criador->id == $doacao->user_id){
               $dono = $criador->name;
               break;
             };
           };
           ?>
 
-          <!-- Card que mostra a Requisição do trabalho voluntário -->
+          <!-- Card que mostra a Requisição da Doação -->
       <div class="col s12">
         <div class="card horizontal">
           <div class="card-image">
-            <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+            <img src="{{ asset('avatarsdoacao/' . $doacao->avatar) }}" width="300" height="300" style="">
           </div>
           <div class="card-stacked">
             <div class="card-content">
               <p>
-                <h4>{{$voluntrab->titulo}}</h4>
-                Trabalho Criado por: 
+                <h4>Requisição de: <strong>{{$doacao->item}}</strong></h4>
+                Doação Requisitada por: 
                 <a class="" href="{{route('users.show', $criador->id )}}"
                 onclick="event.preventDefault();
                 document.getElementById('showuser{{$count}}-form').submit();">
@@ -82,12 +82,12 @@ $count = 0;
                   {{csrf_field()}}
                 </form>
                 <br />
-                Descrição: {{$voluntrab->desc}}
+                Descrição: {{$doacao->desc}}
               </p>
             </div>
             <div class="card-action">
               <!-- Botão para ir para pagina individual de cada Requisição -->
-              <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+              <form action="{{route('doacaos.show', $doacao->id)}}" method="">
                 {{csrf_field()}}
                 <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">
                   Visualizar esta Requisição
@@ -108,51 +108,51 @@ $count = 0;
         <!-- Se ele não achou nenhum, ele mostra essa mensagem ao usuario -->
         @if($option == 0)
           <h3 class="center">
-            Este usuario não se cadastrou em nenhum trabalho voluntário ainda,
-            vá até o menu "<a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>" para escolher um de seu interesse!
+            Este usuario ainda não esta cadastrado em nenhuma Doação,
+            vá até o menu "<a href="{{ route('doacaos.index') }}">Doações</a>" para escolher uma de seu interesse!
           </h3>
           <br /><br /><br /><br />
         @endif
 
         </div>
         
-        <!-- trabalhos completados -->
+        <!-- Doações completados -->
       <div id="test2" class="col s12">
           
                 <?php $option = 0; ?>
-                @foreach ($voluntrabs as $voluntrab)
-                  @if ($voluntrab->status == 1)
+                @foreach ($doacaos as $doacao)
+                  @if ($doacao->status == 1)
                   <?php $hit = 0; ?>
-                  @foreach ($voluntrab->user as $voluntrabuser)
-                    @if($user->id == $voluntrabuser->id)
+                  @foreach ($doacao->user as $doacaouser)
+                    @if($user->id == $doacaouser->id)
                       <?php $hit = 1; ?>
                     @endif
                   @endforeach
           
                   <!-- Se o hit der certo, ele passa por aqui e acha o 
-                  nome do criador do trabalho-->
+                  nome do criador da Doação-->
                   @if ($hit === 1)
                     <?php
                     $option = 1;
                     foreach ($users as $criador){
-                      if($criador->id == $voluntrab->user_id){
+                      if($criador->id == $doacao->user_id){
                         $dono = $criador->name;
                         break;
                       };
                     };
                     ?>
           
-                    <!-- Card que mostra a Requisição do trabalho voluntário -->
+                    <!-- Card que mostra a Requisição da Doação -->
                 <div class="col s12">
                   <div class="card horizontal">
                     <div class="card-image">
-                      <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+                      <img src="{{ asset('avatarsdoacao/' . $doacao->avatar) }}" width="300" height="300" style="">
                     </div>
                     <div class="card-stacked">
                       <div class="card-content">
                         <p>
-                            <h4>{{$voluntrab->titulo}}</h4>
-                          Trabalho Criado por: 
+                            <h4>Requisição de: <strong>{{$doacao->item}}</strong></h4>
+                            Doação Requisitada por: 
                           <a class="" href="{{route('users.show', $criador->id )}}"
                           onclick="event.preventDefault();
                           document.getElementById('showuser{{$count}}-form').submit();">
@@ -162,12 +162,12 @@ $count = 0;
                             {{csrf_field()}}
                           </form>
                           <br />
-                          Descrição: {{$voluntrab->desc}}
+                          Descrição: {{$doacao->desc}}
                         </p>
                       </div>
                       <div class="card-action">
                         <!-- Botão para ir para pagina individual de cada Requisição -->
-                        <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+                        <form action="{{route('doacaos.show', $doacao->id)}}" method="">
                           {{csrf_field()}}
                           <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">
                             Visualizar esta Requisição
@@ -188,8 +188,8 @@ $count = 0;
                   <!-- Se ele não achou nenhum, ele mostra essa mensagem ao usuario -->
                   @if($option == 0)
                     <h3 class="center">
-                      Este usuario não completou nenhum trabalho voluntário ainda,
-                      vá até o menu "<a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>" para escolher um de seu interesse!
+                      Este usuario não completou nenhuma Doação ainda,
+                      vá até o menu "<a href="{{ route('doacaos.index') }}">Doação</a>" para escolher um de seu interesse!
                     </h3>
                     <br /><br /><br /><br />
                   @endif
@@ -200,9 +200,9 @@ $count = 0;
 
       </div>
     </div>
-        <!-- Se o usuario for uma instituição mostra os trabalhos que ele requisitou -->
+        <!-- Se o usuario for uma instituição mostra as Doações que ele requisitou -->
       @else
-        <h2>Você requisitou os seguintes Trabalhos:</h2>
+        <h2>Você requisitou as seguintes Doações:</h2>
           <div class="divider"></div>
 
           <div class="row">
@@ -215,34 +215,34 @@ $count = 0;
           </div>
             <div class="row">
               <div class="col s12">
-                <!-- Sistema de Hit para ver se o Trabalho sendo analizado
+                <!-- Sistema de Hit para ver se a Doação sendo analizada
                 é um no qual o usuario está cadastrado -->
 
-                <!-- trabalhos em andamento -->
+                <!-- doações em andamento -->
                 <div id="test1" class="col s12">
                 <?php $option = 0; ?>
-                @foreach ($voluntrabs as $voluntrab)
-                @if ($voluntrab->status == 0)
+                @foreach ($doacaos as $doacao)
+                @if ($doacao->status == 0)
                 <?php $hit = 0; ?>
-                  @if($user->id == $voluntrab->user_id) 
+                  @if($user->id == $doacao->user_id) 
                     <?php 
                     $hit = 1; 
                     $option = 1;
                     ?>
                   @endif
 
-                  <!-- Se ele for o dono ele mostra o trabalho -->
+                  <!-- Se ele for o dono ele mostra a Doação -->
                   @if ($hit === 1)
                     <div class="col s12">
                       <div class="card horizontal">
                         <div class="card-image">
-                          <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+                          <img src="{{ asset('avatarsdoacao/' . $doacao->avatar) }}" width="300" height="300" style="">
                         </div>
                         <div class="card-stacked">
                           <div class="card-content">
                             <p>
-                              <h4>{{$voluntrab->titulo}}</h4>
-                              Trabalho Criado por: 
+                              <h4>Requisição de: <strong>{{$doacao->item}}</strong></h4>
+                                Doação Requisitada por:  
                               <a class="" href="{{route('users.show', $user->id )}}"
                                 onclick="event.preventDefault();
                                 document.getElementById('showuser{{$count}}-form').submit();">
@@ -253,12 +253,12 @@ $count = 0;
                               </form>
 
                               <br />
-                              Descrição: {{$voluntrab->desc}}
+                              Descrição: {{$doacao->desc}}
                             </p>
                           </div>
                           <div class="card-action">
-                            <!-- Botão para ir para pagina especifica de cada trabalho -->
-                            <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+                            <!-- Botão para ir para pagina especifica de cada Doação -->
+                            <form action="{{route('doacaos.show', $doacao->id)}}" method="">
                               {{csrf_field()}}
                               <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">Visualizar esta Requisição</button>
                             </form>
@@ -275,39 +275,39 @@ $count = 0;
                 <!-- Se ele não achar nada ele mostra essa mensagem -->
                 @if($option == 0)
                   <h3 class="center">
-                  Esta instituição não tem nenhum trabalho voluntário em antamento,
-                  vá até o menu "<a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>" para requisitar um!
+                  Esta instituição não tem nenhuma Requisição de Doação em andamento,
+                  vá até o menu "<a href="{{ route('doacaos.index') }}">Doação</a>" para requisitar um!
                   </h3>
                   <br /><br /><br /><br />
                 @endif
                   
                 </div>
 
-                 <!-- trabalhos completados -->
+                 <!-- Doação completados -->
                  <div id="test2" class="col s12">
                     <?php $option = 0; ?>
-                    @foreach ($voluntrabs as $voluntrab)
-                    @if ($voluntrab->status == 1)
+                    @foreach ($doacaos as $doacao)
+                    @if ($doacao->status == 1)
                     <?php $hit = 0; ?>
-                      @if($user->id == $voluntrab->user_id) 
+                      @if($user->id == $doacao->user_id) 
                         <?php 
                         $hit = 1; 
                         $option = 1;
                         ?>
                       @endif
     
-                      <!-- Se ele for o dono ele mostra o trabalho -->
+                      <!-- Se ele for o dono ele mostra a Doação -->
                       @if ($hit === 1)
                         <div class="col s12">
                           <div class="card horizontal">
                             <div class="card-image">
-                              <img src="{{ asset('avatarsvoluntrab/' . $voluntrab->avatar) }}" width="300" height="300" style="">
+                              <img src="{{ asset('avatarsdoacao/' . $doacao->avatar) }}" width="300" height="300" style="">
                             </div>
                             <div class="card-stacked">
                               <div class="card-content">
                                 <p>
-                                  <h4>{{$voluntrab->titulo}}</h4>
-                                  Trabalho Criado por: 
+                                  <h4>Requisição de: <strong>{{$doacao->item}}</strong></h4>
+                                    Doação Requisitada por: 
                                   <a class="" href="{{route('users.show', $user->id )}}"
                                     onclick="event.preventDefault();
                                     document.getElementById('showuser{{$count}}-form').submit();">
@@ -318,12 +318,12 @@ $count = 0;
                                   </form>
     
                                   <br />
-                                  Descrição: {{$voluntrab->desc}}
+                                  Descrição: {{$doacao->desc}}
                                 </p>
                               </div>
                               <div class="card-action">
-                                <!-- Botão para ir para pagina especifica de cada trabalho -->
-                                <form action="{{route('voluntrabs.show', $voluntrab->id)}}" method="">
+                                <!-- Botão para ir para pagina especifica de cada Doação -->
+                                <form action="{{route('doacaos.show', $doacao->id)}}" method="">
                                   {{csrf_field()}}
                                   <button class="waves-effect waves-light btn-flat blue-text text-darken-2" type="submit">Visualizar esta Requisição</button>
                                 </form>
@@ -340,7 +340,7 @@ $count = 0;
                     <!-- Se ele não achar nada ele mostra essa mensagem -->
                     @if($option == 0)
                       <h3 class="center">
-                      Esta instituição não tem nenhum trabalho voluntário conluido!
+                      Esta instituição não tem nenhuma Requisição de Doação conluida!
                       </h3>
                       <br /><br /><br /><br />
                     @endif

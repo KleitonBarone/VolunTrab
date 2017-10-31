@@ -10,7 +10,10 @@ class UserController extends Controller
 {
     public function show(User $user)
     {
-        return view('user.show', compact('user'));
+        $allusers = User::all();
+        
+
+        return view('user.show', compact('user', 'allusers'));
     }
 
     public function edit(User $user)

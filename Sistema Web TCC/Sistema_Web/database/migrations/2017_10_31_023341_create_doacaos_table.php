@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVoluntrabsTable extends Migration
+class CreateDoacaosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateVoluntrabsTable extends Migration
      */
     public function up()
     {
-        Schema::create('voluntrabs', function (Blueprint $table) {
+        Schema::create('doacaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
+            $table->string('item');
+            $table->string('local');
             $table->string('data');
             $table->integer('status');
             $table->string('desc');
@@ -24,8 +25,6 @@ class CreateVoluntrabsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-
-
         });
     }
 
@@ -36,6 +35,6 @@ class CreateVoluntrabsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voluntrabs');
+        Schema::dropIfExists('doacaos');
     }
 }

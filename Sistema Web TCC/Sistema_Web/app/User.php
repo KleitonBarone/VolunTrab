@@ -37,4 +37,31 @@ class User extends Authenticatable
     ->withTimestamps();
 
     }
+
+    public function doacao_created()
+    {
+        return $this->hasMany('App\Doacao', 'user_id');
+    }
+
+    public function doacao() {
+    return $this->belongsToMany('App\Doacao', 'user_doacao')
+    ->withTimestamps();
+
+    }
+
+    public function avalias()
+    {
+      return $this->belongsToMany('App\User', 'avalia_user', 'user_id', 'avalia_id')
+      ->withPivot('nota', 'comentario');
+      
+    }
+    
+    
+    public function theavalias()
+    {
+      return $this->belongsToMany('App\User', 'avalia_user', 'avalia_id', 'user_id')
+      ->withPivot('nota', 'comentario');
+      
+    }
+
 }
