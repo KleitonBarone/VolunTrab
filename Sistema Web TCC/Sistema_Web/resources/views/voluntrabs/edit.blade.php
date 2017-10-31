@@ -42,7 +42,7 @@
                             <input id="titulo" type="text" class="validate" name="titulo" value="{{$voluntrab->titulo}}" required>
                             <label for="data">Titulo</label>                                   
                     </div>
-                </div>
+                    </div>
 
                     <!-- Campo Imagem para o Trabalho -->
                     <div class="file-field input-field">
@@ -62,6 +62,14 @@
                             title="Escreva a data desse modo: XX/XX/XXXX" placeholder="XX/XX/XXXX" value="{{$voluntrab->data}}" required>
                             <label for="data">Data do Trabalho</label>                                 
                         </div>
+                    </div>
+
+                    <!-- Campo Local -->
+                    <div class="row">
+                    <div class="input-field col s12">
+                            <input id="local" type="text" class="validate" name="local" value="{{$voluntrab->local}}" required>
+                            <label for="data">Local</label>                                   
+                    </div>
                     </div>
 
                     <!-- Campo Descrição do Trabalho -->

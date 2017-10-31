@@ -128,7 +128,7 @@ $count = 0;
                             {{csrf_field()}}
                             <input type="hidden" id="users" name="users" value="{{ Auth::user()->id }}" >
                             <div class="center">
-                                <button class="waves-effect waves-light blue btn" type="submit">Participar do Trabalho</button>
+                                <button class="waves-effect waves-light blue btn" type="submit">Participar da Doação</button>
                             </div>
                             <br /><br /> 
                         </form>

@@ -42,6 +42,7 @@ class VoluntrabController extends Controller
         $voluntrab = new Voluntrab();
         
                 $voluntrab->titulo = $request->titulo;
+                $voluntrab->local = $request->local;
                 $voluntrab->data = $request->data;
                 $voluntrab->desc = $request->desc;
                 $voluntrab->status = 0;
@@ -94,6 +95,7 @@ class VoluntrabController extends Controller
     {
         $voluntrab->titulo = $request->titulo;
         $voluntrab->data = $request->data;
+        $voluntrab->local = $request->local;
         $voluntrab->desc = $request->desc;
 
         if($request->hasFile('avatar')){

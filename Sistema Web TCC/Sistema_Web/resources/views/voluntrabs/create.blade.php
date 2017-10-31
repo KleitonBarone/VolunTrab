@@ -60,6 +60,14 @@
                     </div>
                 </div>
 
+                <!-- Campo Local do Trabalho -->
+                <div class="row">
+                    <div class="input-field col s12">
+                            <input id="local" type="text" class="validate" name="local" required>
+                            <label for="data">Local</label>                                   
+                    </div>
+                </div>
+
                 <!-- Campo Descrição do Trabalho -->
                 <div class="row"> 
                     <div class="input-field">

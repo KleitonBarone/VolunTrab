@@ -104,7 +104,7 @@ $count = 0;
                 </form></h5>
 
                 <h5>Data da realização do trabalho: <strong>{{$voluntrab->data}}</strong></h3>
-
+                <p><h5>Local:</h5> {{$voluntrab->local}} </p>
                 <p><h5>Descrição do Trabalho:</h5> {{$voluntrab->desc}} </p>
                     </div>
                 

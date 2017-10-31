@@ -16,6 +16,7 @@ class CreateVoluntrabsTable extends Migration
         Schema::create('voluntrabs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
+            $table->string('local');
             $table->string('data');
             $table->integer('status');
             $table->string('desc');

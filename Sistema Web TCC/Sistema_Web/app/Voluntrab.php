@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Voluntrab extends Model
 {
     protected $fillable = [
-        'data', 'desc', 'titulo', 'status',
+        'data', 'desc', 'titulo', 'status', 'local'
     ];
 
     public function creator()

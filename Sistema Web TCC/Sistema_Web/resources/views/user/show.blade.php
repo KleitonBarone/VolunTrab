@@ -25,19 +25,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12">
+        
             <h4 class="center">Este usuario é @if($user->tipo == 1) um Voluntário! @else uma Instiuição! @endif </h4>
-
+            
             <br />
             <h5>Essas são suas Informações:</h5>
 
-            Imagem de Perfil:
+            <div class="col s6">
+            <h5>Imagem de Perfil:</h5>
             <br />
             <div class="center" >
                 <!-- Mostrar a Imagem de Perfil do Usuario -->
-                <img src="{{ asset('avatars/' . $user->avatar) }}" class="circle materialboxed" width="50%" height="50%" >
+                <img src="{{ asset('avatars/' . $user->avatar) }}" class="circle materialboxed responsive-img" width="50%" height="50%" >
             </div>
-
+        </div>
+        <div class="col s6">
             <ul>
             @if($user->tipo == 1)
                 <!-- Informação do Usuario caso ele for Voluntário -->

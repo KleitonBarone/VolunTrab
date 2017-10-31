@@ -30,6 +30,9 @@
       $('.parallax').parallax();
     });
     </script>
+    <script>
+    $(".dropdown-button").dropdown();
+    </script>
     <!-- Fim dos Scripts -->
 
 
@@ -105,6 +108,10 @@
 
                     </li>
 
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Trabalhos Voluntários<i class="material-icons right">arrow_drop_down</i></a></li>
+
+                    <ul id="dropdown2" class="dropdown-content">
+
                     <li class="@yield('trabrelacionado')">
 
                         <a class="" href="{{route('users.view', Auth::user()->id )}}"
@@ -127,6 +134,12 @@
                     <a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>
                     
                     </li>
+
+                    </ul>
+
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Doações<i class="material-icons right">arrow_drop_down</i></a></li>
+
+                    <ul id="dropdown3" class="dropdown-content">
 
                     <li class="@yield('doacaos')">
                     
@@ -151,6 +164,7 @@
 
                     </li>
 
+                    </ul>
 
                     @endif
                     

@@ -75,7 +75,8 @@ $countcompleto = 0;
                 {{csrf_field()}}
                 </form>
                 <br />
-                Descrição: {{$voluntrab->desc}}
+                <p>Local: {{$voluntrab->local}}</p>
+                <p>Descrição: {{$voluntrab->desc}}</p>
               </p>
             </div>
             <div class="card-action">
@@ -143,7 +144,8 @@ $count++;
                       {{csrf_field()}}
                       </form>
                       <br />
-                      Descrição: {{$voluntrab->desc}}
+                      <p>Local: {{$voluntrab->local}}</p>
+                      <p>Descrição: {{$voluntrab->desc}}</p>
                     </p>
                   </div>
                   <div class="card-action">
