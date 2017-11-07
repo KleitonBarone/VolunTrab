@@ -110,7 +110,13 @@
 
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Trabalhos Voluntários<i class="material-icons right">arrow_drop_down</i></a></li>
 
-                    <ul id="dropdown2" class="dropdown-content">
+                    <ul id="dropdown2" class="dropdown-content" >
+
+                    <li class="@yield('trabalhos')">
+                    
+                    <a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>
+                    
+                    </li>
 
                     <li class="@yield('trabrelacionado')">
 
@@ -127,12 +133,6 @@
                             {{csrf_field()}}
                         </form>
 
-                    </li>
-
-                    <li class="@yield('trabalhos')">
-                    
-                    <a href="{{ route('voluntrabs.index') }}">Trabalhos Voluntários</a>
-                    
                     </li>
 
                     </ul>
@@ -166,8 +166,15 @@
 
                     </ul>
 
+                    @if (Auth::user()->tipo == 3)
+                    <li class="@yield('admin')">
+                    <a href="{{route('admin.index')}}">Painel de Controle</a>
+                    </li>
                     @endif
-                    
+
+
+                    @endif
+
                     <li class="@yield('ajuda')">
                     
                     <a href="/ajuda">Ajuda</a>

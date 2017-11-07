@@ -32,6 +32,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Voluntrab', 'user_id');
     }
 
+    public function denuncia()
+    {
+        return $this->hasMany('App\Denuncia', 'user_id');
+    }
+
     public function voluntrab() {
     return $this->belongsToMany('App\Voluntrab')
     ->withTimestamps();

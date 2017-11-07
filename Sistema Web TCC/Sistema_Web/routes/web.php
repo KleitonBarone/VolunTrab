@@ -33,6 +33,8 @@ Route::resource('voluntrabs', 'VoluntrabController');
 
 Route::resource('doacaos', 'DoacaoController');
 
+Route::resource('denuncias', 'DenunciaController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //show user
@@ -87,4 +89,27 @@ Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuse
 Route::get('user/{user}/doacaos', ['uses' => 'DoacaoUser@view',
 'as'=> 'doacaos.view']);
 
+//index admin
+Route::get('admin/', ['uses' => 'AdminController@index',
+'as'=> 'admin.index']);
+
+//users admin
+Route::get('admin/users', ['uses' => 'AdminController@user',
+'as'=> 'admin.user']);
+
+//doacao admin
+Route::get('admin/doacao', ['uses' => 'AdminController@doacao',
+'as'=> 'admin.doacao']);
+
+//voluntrab admin
+Route::get('admin/voluntrab', ['uses' => 'AdminController@voluntrab',
+'as'=> 'admin.voluntrab']);
+
+//denuncias admin
+Route::get('admin/denuncia', ['uses' => 'AdminController@denuncia',
+'as'=> 'admin.denuncia']);
+
+//excluir usuario
+Route::get('admin/users/{user}/delete', ['uses' => 'UserController@destroy',
+'as'=> 'users.destroy']);
 });

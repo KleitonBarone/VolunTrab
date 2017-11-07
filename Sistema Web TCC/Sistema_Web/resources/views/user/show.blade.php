@@ -7,11 +7,16 @@
 @section('content')
 <!-- Pagina para Mostrar o Perfil de um Usuario -->
 <div class="container">
-    <div class="row center">
+    <div class="row">
         <div class="col s12">
             <!-- Titulo da Pagina -->
+            <div class="row">
+            <div class="col s9 right-align">
             <h2>Perfil de {{$user->name}}</h2>
-
+            </div>
+            <div class="col s3 right-align">
+            <br />
+            <br />
             <!-- Se o Usuario Visitando for o Dono do Perfil Aparece o Botão de Editar -->
             @if (Auth::user()->id == $user->id)
             <a class="btn btn-primary" href="{{route('users.edit', $user->id )}}">
@@ -19,6 +24,18 @@
             </a>
             <br /><br />
             @endif
+            <!-- Se o usuario vendo o perfil nao for o dono do mesmo, aparece o botao de denuncia -->
+            @if (Auth::user()->id != $user->id)
+            <form method="get" action="{{ route('denuncias.create') }}">
+                {{csrf_field()}}
+                <input type="hidden" name="user" id="user" value="{{$user->id}}">
+                <button class="waves-effect waves-teal btn-flat" type="submit">
+                <i class="material-icons">warning</i> Denunciar
+                </button>
+            @endif
+            </div>
+            </div>
+            
 
             <div class="divider"> </div>
 

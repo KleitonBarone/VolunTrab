@@ -41,4 +41,10 @@ class UserController extends Controller
         return redirect('/home');
     }
 
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect('/admin/users');
+    }
+    
 }

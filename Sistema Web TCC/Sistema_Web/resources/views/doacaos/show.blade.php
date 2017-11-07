@@ -105,7 +105,7 @@ $count = 0;
 
                 <h5>Data de Entrega da Doação: <strong>{{$doacao->data}}</strong></h3>
 
-                <p><h5>Descrição da Doação:</h5> {{$doacao->desc}} </p>
+                <p><h5>Descrição da Doação:</h5> <p class="flow-text"> {{$doacao->desc}}</p> </p>
                     </div>
                 
                 </div>
