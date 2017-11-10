@@ -51,8 +51,12 @@ class User extends Authenticatable
     public function doacao() {
     return $this->belongsToMany('App\Doacao', 'user_doacao')
     ->withTimestamps();
-
     }
+
+    public function conquista() {
+        return $this->belongsToMany('App\Conquista')
+        ->withTimestamps();
+        }
 
     public function avalias()
     {

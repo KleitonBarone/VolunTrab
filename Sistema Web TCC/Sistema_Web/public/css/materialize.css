@@ -5474,7 +5474,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #25b7f6;
+  color: #29b6f6;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -7553,7 +7553,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active,
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
-  background-color: #ee6e73;
+  background-color: #929292;
 }
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active a,
@@ -7571,7 +7571,7 @@ input[type=range]:focus::-ms-fill-upper {
   left: 0;
   right: 0;
   height: 120vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   z-index: 997;
   will-change: opacity;
 }

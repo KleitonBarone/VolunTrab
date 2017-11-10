@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Sobre a Equipe - Voluntrab')
+
 @section('sobre', 'active')
 
 @section('content')
@@ -26,17 +28,15 @@
        <strong>Nome:</strong>Kleiton Barone
        <strong>Participação:</strong> Fez a programação do Sistema Web, além de cuidar de partes de todo o resto do projeto.
        </div>
-        <div class="col s2">
-       imagem integrante 2
-       (esperando enviar a imagem)
+       <div class="col s2">
+       <img src="{{ asset('integrantes/Luan.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Luan Siqueira
        <strong>Participação:</strong> Cuidou da Administração do grupo e da parte de Banco de dados do Sistema.
        </div>
       <div class="col s2">
-       imagem integrante 3
-       (esperando enviar a imagem)
+        <img src="{{ asset('integrantes/naliato.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Lucas Naliato
@@ -49,24 +49,21 @@
   <div class="section">
        <div class="row center">
        <div class="col s2">
-       imagem integrante 4
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/marsao.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Vitor Marsão
        <strong>Participação:</strong> Cuidou da Parte do Front End e do Banco de dados do Projeto.
        </div>
         <div class="col s2">
-       imagem integrante 5
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/leosao.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Leonardo Fernandes
        <strong>Participação:</strong> Cuidou da parte de Banco de dados e de Design do Projeto.
        </div>
       <div class="col s2">
-       imagem integrante 6
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/biel.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Gabriel Villa
@@ -79,24 +76,21 @@
   <div class="section">
        <div class="row center">
        <div class="col s2">
-       imagem integrante 7
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/stephanie.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Stephanie Orihuela
        <strong>Participação:</strong> Cuidou da parte do Design do Projeto.
        </div>
         <div class="col s2">
-       imagem integrante 8
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/analaura.jpeg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Ana Laura Santos
        <strong>Participação:</strong> Cuidou da parte do Design do Projeto.
        </div>
       <div class="col s2">
-       imagem integrante 9
-       (esperando enviar a imagem)
+       <img src="{{ asset('integrantes/nathalia.jpg') }}" class="circle materialboxed responsive-img" width="" height="" >
        </div>
        <div class="col s2">
        <strong>Nome:</strong>Nathalia Mandeli

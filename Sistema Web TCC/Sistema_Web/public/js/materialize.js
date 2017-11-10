@@ -1751,7 +1751,7 @@ if (Vel) {
         // Position dropdown
         activates.css({
           position: 'absolute',
-          top: origin.position().top + verticalOffset + scrollYOffset,
+          top: '64px', //origin.position().top + verticalOffset + scrollYOffset
           left: leftPosition + scrollXOffset
         });
 

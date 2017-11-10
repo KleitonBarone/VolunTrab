@@ -35,6 +35,8 @@ Route::resource('doacaos', 'DoacaoController');
 
 Route::resource('denuncias', 'DenunciaController');
 
+Route::resource('conquistas', 'ConquistaController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 //show user
@@ -112,4 +114,8 @@ Route::get('admin/denuncia', ['uses' => 'AdminController@denuncia',
 //excluir usuario
 Route::get('admin/users/{user}/delete', ['uses' => 'UserController@destroy',
 'as'=> 'users.destroy']);
+
+//completa a conquista para um usuario
+Route::post('conquistas/{conquista}', ['uses' => 'ConquistaUser@adduser',
+'as'=> 'conquistas.adduser']);
 });
