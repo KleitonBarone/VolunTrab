@@ -76,7 +76,7 @@
                             
 
                         </li>
-                        @endif
+                        
                         
                         <li class="@yield('inicio')"><a href="/home">Início</a></li>
 
@@ -85,11 +85,14 @@
                                 <a href="{{route('admin.index')}}">Painel de Controle</a>
                             </li>
                         @endif
-
+                        
+                        @if (Auth::user()->tipo != 3)
                         <li>
                             <a href="{{route('conquistas.index')}}">Conquistas</a>
                         </li>
+                        @endif
 
+                        @endif
                         
 
                     @if (Auth::check())
@@ -107,6 +110,7 @@
 
                     </li>
 
+                    @if (Auth::user()->tipo != 3)
                     <ul class="collapsible collapsible-accordion">
                         <li>
                             <a class="collapsible-header">Trabalhos Voluntários<i class="material-icons right">arrow_drop_down</i></a>
@@ -172,7 +176,7 @@
                             </div>
                         </li>
                     </ul>
-
+                    @endif
                     
 
 
@@ -212,6 +216,7 @@
 
                     </li>
 
+                    @if (Auth::user()->tipo != 3)
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Trabalhos Voluntários<i class="material-icons right">arrow_drop_down</i></a></li>
 
                     <ul id="dropdown2" class="dropdown-content" >
@@ -269,7 +274,7 @@
                     </li>
 
                     </ul>
-
+                        @endif
                     
 
 
@@ -316,9 +321,11 @@
                                     </li>
                                 @endif
 
+                                @if (Auth::user()->tipo != 3)
                                 <li>
                                     <a href="{{route('conquistas.index')}}">Conquistas</a>
                                 </li>
+                                @endif
 
                                 <li>
                                     <a class="red-text darken-2" href="{{ route('logout') }}"

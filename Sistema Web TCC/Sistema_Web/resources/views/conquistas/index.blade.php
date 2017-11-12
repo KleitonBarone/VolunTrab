@@ -66,10 +66,12 @@
 
         <tbody>
           @forelse($users as $user)
+           @if ($user->tipo != 3)
           <tr>
             <td>{{$user->name}}</td>
             <td>{{count($user->conquista)}}</td>
           </tr>
+            @endif
           @empty
           <tr>
             <td>Nenhum resultado encontrado</td>
@@ -79,6 +81,6 @@
     </table>
       <br /> <br /> <br /> <br /> <br /> <br /> 
     </div>
-
+    <br /> <br /> <br /><br /> <br /> <br />
 </div>
 @endsection

@@ -3,10 +3,16 @@
 @section('titulo', 'Detalhes da Conquista - Voluntrab')
 
 @section('content')
+
+@if ($conquista->id == 1)
 <?php 
 $elegivel = 1; 
-
 ?>
+@else
+<?php 
+$elegivel = 0; 
+?>
+@endif
 <div class="container z-depth-5">
     <div class="container">
     <br />
