@@ -28,14 +28,14 @@ $(document).ready(function() {
                 
                 <br />
 
-                <form action="{{ route('user.addavalia') }}" method="post">
+                <form action="{{ route('user.addavaliadoacao') }}" method="post">
                     {{csrf_field()}}
 
                     <input type="hidden" id="numero" name="numero" value="{{ count($avaliados) }}" >
 
                    <input type="hidden" id="avaliadorid" name="avaliadorid" value="{{ $avaliador->id }}" >
 
-                    <input type="hidden" id="voluntrabid" name="voluntrabid" value="{{ $voluntrab->id }}" >
+                    <input type="hidden" id="doacaoid" name="doacaoid" value="{{ $doacao->id }}" >
                     
                 <?php
                 $count = 0;

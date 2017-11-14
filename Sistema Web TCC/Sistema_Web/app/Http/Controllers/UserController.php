@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\User;
+use App\Avalia;
+
 use Illuminate\Http\Request;
 use Image;
 
@@ -13,7 +16,12 @@ class UserController extends Controller
         $allusers = User::all();
         
 
-        return view('user.show', compact('user', 'allusers'));
+       $avalias = Avalia::all();
+        
+
+       
+
+        return view('user.show', compact('user', 'allusers', 'avalias'));
     }
 
     public function edit(User $user)

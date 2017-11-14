@@ -201,16 +201,19 @@ $count = 0;
                     <br /> <br />
                     <!-- Se ele for o criador do trabalho, ele pode concluir-lo -->
                     @if (Auth::user()->id == $doacao->user_id)
+                        @if(count($doacao->user)>0)
                         @if($doacao->status == 0)
-                    <form action="{{route('doacao.complete', $doacao->id)}}" method="post">
+                    <form action="{{route('user.avaliadoacao')}}" method="get">
                             {{csrf_field()}}
                            
-                           
+                           <input type="hidden" id="doacaoid" name="doacaoid" value="{{ $doacao->id }}" >
+
                             <div class="center">
                                 <button class="waves-effect waves-light blue btn" type="submit">Concluir a Doação!</button>
                             </div>
                             <br /><br /> 
                     </form>
+                        @endif
                         @endif
                     @endif
                 </div>

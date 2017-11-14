@@ -201,16 +201,19 @@ $count = 0;
                     <br /> <br />
                     <!-- Se ele for o criador do trabalho, ele pode concluir-lo -->
                     @if (Auth::user()->id == $voluntrab->user_id)
-                        @if($voluntrab->status == 0)
-                    <form action="{{route('voluntrab.complete', $voluntrab->id)}}" method="post">
+                        @if (count($voluntrab->user)>0)
+                            @if($voluntrab->status == 0)
+                    <form action="{{route('user.avalia')}}" method="get">
                             {{csrf_field()}}
                            
-                           
+                           <input type="hidden" id="voluntrabid" name="voluntrabid" value="{{ $voluntrab->id }}" >
+
                             <div class="center">
                                 <button class="waves-effect waves-light blue btn" type="submit">Concluir o Trabalho!</button>
                             </div>
                             <br /><br /> 
                     </form>
+                            @endif
                         @endif
                     @endif
                 </div>

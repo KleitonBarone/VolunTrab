@@ -46,7 +46,7 @@
             <h4 class="center">Este usuario é @if($user->tipo == 1) um Voluntário! @else uma Instiuição! @endif </h4>
             
             <br />
-            <h5>Essas são suas Informações:</h5>
+            <h5 class="center">Essas são suas Informações:</h5>
 
             <div class="col s6">
             <h5>Imagem de Perfil:</h5>
@@ -73,6 +73,65 @@
             </ul>
         </div>
     </div>
+    @if($user->tipo==1)
+    <div class="row">
+    <div class="divider"></div>
+    <?php $counter = 0; foreach ($avalias as $avalia){ if ($avalia->user_id == $user->id){ $counter = 1 ; break; }} ?>
+    @if($counter == 1)
+    <h3 class="center">Nota Media de Avaliação: 
+    <?php 
+    $somanota = 0; 
+    $counter = 0;
+    foreach ($avalias as $avalia)
+    {
+    if ($avalia->user_id == $user->id)
+    {
+    $somanota += $avalia->nota;
+    $counter++;   
+    } 
+    }
+    $media = $somanota / $counter; 
+
+    ?>
+    <strong>{{$media}}</strong>
+    </h3>
+    <br/>
+    <h4> Avaliações:</h4>
+    @foreach ($avalias as $avalia)
+    @if ($avalia->user_id == $user->id)
+    <div class="row z-depth-1 valign-wrapper">
+
+    <div class="col s3">
+    <h5>Avaliador: <?php 
+    foreach($allusers as $alluser)
+    { 
+        if($alluser->id == $avalia->id_avaliador)
+        { 
+        $nome_avaliador = $alluser->name;
+         break;
+        }
+    } 
+    ?>
+    <strong>{{$nome_avaliador}}</strong></h5>
+    </div>
+
+    <div class="col s3">
+    <h5>Nota: <strong>{{$avalia->nota}}</strong></h5>
+    </div>
+
+    <div class="col s6">
+    <h5>Comentário:</h5><p>{{$avalia->comentario}}</p>
+    </div>
+    
+    </div>
+    @endif
+    @endforeach
+    </div>
+    @else
+    <h5>Esse usuario ainda não foi avaliado, participe de um trabalho voluntário ou doação para receber uma avaliação.</h5>
+    </div>
+    @endif
+    @endif
     
 <br /><br /><br />
 </div>

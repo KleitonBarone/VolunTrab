@@ -37,6 +37,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Denuncia', 'user_id');
     }
 
+    public function avalia()
+    {
+        return $this->hasMany('App\Avalia', 'user_id');
+    }
+
     public function voluntrab() {
     return $this->belongsToMany('App\Voluntrab')
     ->withTimestamps();
@@ -58,19 +63,5 @@ class User extends Authenticatable
         ->withTimestamps();
         }
 
-    public function avalias()
-    {
-      return $this->belongsToMany('App\User', 'avalia_user', 'user_id', 'avalia_id')
-      ->withPivot('nota', 'comentario');
-      
-    }
-    
-    
-    public function theavalias()
-    {
-      return $this->belongsToMany('App\User', 'avalia_user', 'avalia_id', 'user_id')
-      ->withPivot('nota', 'comentario');
-      
-    }
 
 }

@@ -63,13 +63,21 @@ Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuse
 Route::get('user/{user}/trabalhos', ['uses' => 'VoluntrabUser@view',
 'as'=> 'users.view']);
 
-//pagina para avaliar os usuarios
+//pagina para avaliar os usuarios no voluntrab
 Route::get('avalia', ['uses' => 'AvaliaUser@avaliauser',
 'as'=> 'user.avalia']);
 
-//post para adicionar avaliação
+//post para adicionar avaliação no voluntrab
 Route::post('avalia', ['uses' => 'AvaliaUser@addavalia',
 'as'=> 'user.addavalia']);
+
+//pagina para avaliar os usuarios na doação
+Route::get('avalia', ['uses' => 'AvaliaUser@avaliauserdoacao',
+'as'=> 'user.avaliadoacao']);
+
+//post para adicionar avaliação na doação
+Route::post('avalia', ['uses' => 'AvaliaUser@addavaliadoacao',
+'as'=> 'user.addavaliadoacao']);
 
 //post para setar o trabalho como completado
 Route::post('/voluntrabs/complete/{voluntrab}', ['uses' => 'VoluntrabController@complete',
