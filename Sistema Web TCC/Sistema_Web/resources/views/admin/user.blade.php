@@ -54,9 +54,7 @@
                         <i class="material-icons">create</i>
                         </a>
                         
-                        <a class="btn btn-primary red" href="{{route('users.destroy', $user->id )}}">
-                        <i class="material-icons">delete</i>
-                        </a>
+                    
                         </div>
                         </td>
                     </tr>
@@ -112,9 +110,7 @@
                         <i class="material-icons">create</i>
                         </a>
                         
-                        <a class="btn btn-primary red" href="{{route('users.destroy', $user->id )}}">
-                        <i class="material-icons">delete</i>
-                        </a>
+                        
                         </div>
                         </td>
                     </tr>
@@ -134,7 +130,9 @@
                     <br /><br /><br />
                     @endif
                     <br /><br /><br /><br /><br />
+                    <br /><br /><br />
             </div>
         </div>
+        <br /><br /><br /><br /><br /><br />
 </div>
 @endsection

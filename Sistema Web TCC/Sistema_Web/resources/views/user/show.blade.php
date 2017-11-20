@@ -46,7 +46,7 @@
             <h4 class="center">Este usuario é @if($user->tipo == 1) um Voluntário! @else uma Instiuição! @endif </h4>
             
             <br />
-            <h5 class="center">Essas são suas Informações:</h5>
+            
 
             <div class="col s6">
             <h5>Imagem de Perfil:</h5>
@@ -133,7 +133,7 @@
     @endif
     @endif
     
-<br /><br /><br />
+<br /><br /><br /><br /><br /><br />
 </div>
 <br /><br /><br /><br /><br />
    

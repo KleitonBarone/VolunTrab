@@ -184,6 +184,19 @@ $count = 0;
                                         </td>
                                         <td>{{ $voluntrabuser->tel }}</td>
                                         <td>{{ $voluntrabuser->datanasc }}</td>
+                                        <td>
+                                        @if ( (Auth::user()->id == $voluntrabuser->id) or (Auth::user()->tipo == 3) or (Auth::user()->id == $voluntrab->user_id) )
+                                            <form id="deleteuser{{$count}}-form"action="{{route('voluntrabs.deleteuser', $voluntrab->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input type="hidden" id="users" name="users" value="{{ Auth::user()->id }}" >
+                                            </form>
+                                            <a class="btn btn-primary red" href="{{route('voluntrabs.deleteuser', $voluntrab->id )}}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('deleteuser{{$count}}-form').submit();">
+                                                <i class="material-icons">clear</i>
+                                            </a>
+                                        @endif
+                                        </td>
                                     </tr>
                                     <?php
                                     $count++;
@@ -204,6 +217,7 @@ $count = 0;
                         @if (count($voluntrab->user)>0)
                             @if($voluntrab->status == 0)
                     <form action="{{route('user.avalia')}}" method="get">
+                    
                             {{csrf_field()}}
                            
                            <input type="hidden" id="voluntrabid" name="voluntrabid" value="{{ $voluntrab->id }}" >

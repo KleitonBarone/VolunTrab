@@ -334,7 +334,8 @@ $count = 0;
                       @endif
                       @endif
                     @endforeach
-    
+                    
+                    
     
     
                     <!-- Se ele não achar nada ele mostra essa mensagem -->
@@ -342,7 +343,7 @@ $count = 0;
                       <h3 class="center">
                       Esta instituição não tem nenhuma Requisição de Doação conluida!
                       </h3>
-                      <br /><br /><br /><br />
+                      <br /><br /><br /><br /><br /><br />
                     @endif
                       
                     </div>
@@ -352,6 +353,8 @@ $count = 0;
             </div>
           <br /><br /><br />
 </div>
+</div>
 <br /><br /><br /><br /><br />
+<br /><br /><br />
 </div>
 @endsection

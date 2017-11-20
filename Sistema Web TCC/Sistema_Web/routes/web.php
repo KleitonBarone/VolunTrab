@@ -64,19 +64,19 @@ Route::get('user/{user}/trabalhos', ['uses' => 'VoluntrabUser@view',
 'as'=> 'users.view']);
 
 //pagina para avaliar os usuarios no voluntrab
-Route::get('avalia', ['uses' => 'AvaliaUser@avaliauser',
+Route::get('/avalia/voluntrab', ['uses' => 'AvaliaUser@avaliauser',
 'as'=> 'user.avalia']);
 
 //post para adicionar avaliação no voluntrab
-Route::post('avalia', ['uses' => 'AvaliaUser@addavalia',
+Route::post('/avalia/voluntrab/add', ['uses' => 'AvaliaUser@addavalia',
 'as'=> 'user.addavalia']);
 
 //pagina para avaliar os usuarios na doação
-Route::get('avalia', ['uses' => 'AvaliaUser@avaliauserdoacao',
+Route::get('/avalia/doacao', ['uses' => 'AvaliaUser@avaliauserdoacao',
 'as'=> 'user.avaliadoacao']);
 
 //post para adicionar avaliação na doação
-Route::post('avalia', ['uses' => 'AvaliaUser@addavaliadoacao',
+Route::post('/avalia/doacao/add', ['uses' => 'AvaliaUser@addavaliadoacao',
 'as'=> 'user.addavaliadoacao']);
 
 //post para setar o trabalho como completado
@@ -92,8 +92,8 @@ Route::post('doacaos/{doacao}', ['uses' => 'DoacaoUser@adduser',
 'as'=> 'doacaos.adduser']);
 
 //remove user na doação
-Route::post('voluntrabs/{voluntrab}/delete', ['uses' => 'VoluntrabUser@deleteuser',
-'as'=> 'voluntrabs.deleteuser']);
+Route::post('doacaos/{doacao}/delete', ['uses' => 'DoacaoUser@deleteuser',
+'as'=> 'doacaos.deleteuser']);
 
 //pagina view doacao de um usuario
 Route::get('user/{user}/doacaos', ['uses' => 'DoacaoUser@view',

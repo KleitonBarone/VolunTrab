@@ -274,6 +274,15 @@
                     </li>
 
                     </ul>
+
+                    <li>
+                        <a href="{{route('conquistas.index')}}">Conquistas</a>
+                    </li>
+                    
+                        @else
+                        <li class="@yield('admin')">
+                            <a href="{{route('admin.index')}}">Painel de Controle</a>
+                        </li>
                         @endif
                     
 
@@ -315,17 +324,9 @@
 
                             <ul id='dropdown10' class='dropdown-content'>
 
-                                @if (Auth::user()->tipo == 3)
-                                    <li class="@yield('admin')">
-                                        <a href="{{route('admin.index')}}">Painel de Controle</a>
-                                    </li>
-                                @endif
+                                
 
-                                @if (Auth::user()->tipo != 3)
-                                <li>
-                                    <a href="{{route('conquistas.index')}}">Conquistas</a>
-                                </li>
-                                @endif
+                                
 
                                 <li>
                                     <a class="red-text darken-2" href="{{ route('logout') }}"
@@ -355,7 +356,6 @@
 
         @yield('content')
     
-
 <footer class="page-footer light-blue lighten-1">
     <div class="footer-copyright light-blue lighten-2">
         <div class="container">

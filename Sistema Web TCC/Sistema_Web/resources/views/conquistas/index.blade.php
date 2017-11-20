@@ -33,7 +33,7 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>{{$conquista->nome}}</p>
+          <p><h5>Título: <b>{{$conquista->nome}}</b><h5></p>
         </div>
         <div class="card-action">
           <form action="{{route('conquistas.show', $conquista->id)}}" method="">
@@ -60,7 +60,7 @@
         <thead>
           <tr>
               <th>Nome</th>
-              <th>Numero de Conquistas</th>
+              <th>Pontos de Conquistas</th>
           </tr>
         </thead>
 
@@ -69,7 +69,7 @@
            @if ($user->tipo != 3)
           <tr>
             <td>{{$user->name}}</td>
-            <td>{{count($user->conquista)}}</td>
+            <td>{{$user->pontos}}</td>
           </tr>
             @endif
           @empty

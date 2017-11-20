@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Conquista;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,7 +17,9 @@ class ConquistaController extends Controller
     public function index()
     {
         $conquistas = Conquista::all();
-        $users = User::all();
+        $users = DB::table('users')
+                    ->orderBy('pontos', 'desc')
+                    ->get();
 
         return view('conquistas.index', compact('conquistas','users'));
     }

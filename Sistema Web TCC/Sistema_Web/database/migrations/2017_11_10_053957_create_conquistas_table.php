@@ -17,6 +17,7 @@ class CreateConquistasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('desc');
+            $table->integer('pontos');
             $table->string('icone')->default('default.png');
             $table->timestamps();
         });

@@ -184,6 +184,18 @@ $count = 0;
                                         </td>
                                         <td>{{ $doacaouser->tel }}</td>
                                         <td>{{ $doacaouser->datanasc }}</td>
+                                        <td>
+                                        @if ( (Auth::user()->id == $doacaouser->id) or (Auth::user()->tipo == 3) or (Auth::user()->id == $doacao->user_id) )
+                                            <form action="{{route('doacaos.deleteuser', $doacao->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input type="hidden" id="users" name="users" value="{{ Auth::user()->id }}" >
+                                                
+                                                <button class="waves-effect waves-light red btn" type="submit"><i class="material-icons">clear</i></button>
+                                                
+                                                
+                                            </form>
+                                        @endif
+                                        </td>
                                     </tr>
                                     <?php
                                     $count++;

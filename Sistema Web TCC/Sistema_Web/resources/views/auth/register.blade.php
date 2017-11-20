@@ -73,8 +73,8 @@
                                     <!-- Campo Telefone -->
                                     <div class="row form-group">
                                         <div class="input-field col s12">
-                                            <input id="telvolun" type="text" class="validate" name="telvolun" required>
-                                            <label for="telvolun">Telefone</label>                 
+                                            <input id="telvolun" type="text" class="validate telefone" name="telvolun" required>
+                                            <label for="telvolun">Telefone ou Celular</label>                 
                                         </div>
                                     </div>
 
@@ -162,8 +162,8 @@
                                     <!-- Campo Telefone -->
                                     <div class="row form-group">
                                         <div class="input-field col s12">
-                                            <input id="telinst" type="text" class="validate" name="telinst" required>
-                                                <label for="telinst">Telefone</label>   
+                                            <input id="telinst" type="text" class="validate telefone" name="telinst" required>
+                                                <label for="telinst">Telefone ou Celular</label>   
                                         </div>
                                     </div>
 
@@ -212,9 +212,24 @@
 <script>
 jQuery(function($){
    $("#datanasc").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
-   $("#telvolun").mask("(99) 9999-9999");
-   $("#telinst").mask("(99) 9999-9999");
 });
+</script>
+
+<script>
+jQuery("input.telefone")
+        .mask("(99) 9999-9999?9")
+        .focusout(function (event) {  
+            var target, phone, element;  
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);  
+            element.unmask();  
+            if(phone.length > 10) {  
+                element.mask("(99) 99999-999?9");  
+            } else {  
+                element.mask("(99) 9999-9999?9");  
+            }  
+        });
 </script>
 
 @endsection

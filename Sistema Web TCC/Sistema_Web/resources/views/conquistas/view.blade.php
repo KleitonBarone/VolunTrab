@@ -5,6 +5,19 @@
 @section('content')
 
 @if ($conquista->id == 1)
+@if (Auth::guest())
+<?php 
+$elegivel = 0; 
+?>
+@else
+<?php 
+$elegivel = 1; 
+?>
+@endif
+@endif
+
+@if ($conquista->id == 2)
+@if (count(Auth::user()->doacao) > 0)
 <?php 
 $elegivel = 1; 
 ?>
@@ -12,6 +25,43 @@ $elegivel = 1;
 <?php 
 $elegivel = 0; 
 ?>
+@endif
+@endif
+
+@if ($conquista->id == 3)
+@if (count(Auth::user()->doacao) > 4)
+<?php 
+$elegivel = 1; 
+?>
+@else
+<?php 
+$elegivel = 0; 
+?>
+@endif
+@endif
+
+@if ($conquista->id == 4)
+@if (count(Auth::user()->voluntrab) > 0)
+<?php 
+$elegivel = 1; 
+?>
+@else
+<?php 
+$elegivel = 0; 
+?>
+@endif
+@endif
+
+@if ($conquista->id == 5)
+@if (count(Auth::user()->voluntrab) > 4)
+<?php 
+$elegivel = 1; 
+?>
+@else
+<?php 
+$elegivel = 0;
+?>
+@endif
 @endif
 <div class="container z-depth-5">
     <div class="container">
@@ -33,8 +83,9 @@ $elegivel = 0;
                     </div>
 
                     <div class="col s6" style="margin-top:5%;">
-                    <h5 class="center">Descrição da Conquista</h5>
+                    <h5 class="center">Objetivo da Conquista</h5>
                     <p>{{$conquista->desc}}</p>
+                    <p>Essa conquista vale: {{$conquista->pontos}} pontos.</p>
                     </div>
                 </div>
                 

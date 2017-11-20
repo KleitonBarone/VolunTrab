@@ -36,11 +36,11 @@
                         @endforeach
                         <td>{{$delator}}</td>
                         
-                        <td>{{$denuncia->comentario}}</td>
+                        <td>{{substr ( $denuncia->comentario , 0 , 15 )}}...</td>
                         <td>{{$denunciado}}</td>
                         <td>
                         <div class="center">
-                        <a class="btn btn-primary blue" href="{{route('users.show', $denuncia->user_id )}}">
+                        <a class="btn btn-primary blue" href="{{route('denuncias.show', $denuncia->id )}}">
                         <i class="material-icons">pageview</i>
                         </a>
 
@@ -71,5 +71,8 @@
         <br /><br /><br /><br /><br /><br />
         </div>
         <br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br />
+        <br /><br />
 </div>
 @endsection

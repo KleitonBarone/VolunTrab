@@ -56,7 +56,8 @@ class DenunciaController extends Controller
      */
     public function show(Denuncia $denuncia)
     {
-        //
+        $users = User::all();
+        return view('denuncias.show', compact('denuncia', 'users'));
     }
 
     /**

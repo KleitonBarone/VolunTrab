@@ -61,7 +61,7 @@
 
                      <!-- Campo Telefone -->
                     <div class="input-field">
-                             <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
+                             <input id="tel" type="text" class="validate telefone" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
                              title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" value="{{$user->tel}}" required>
                              <label for="tel">Telefone</label>                                  
                     </div>
@@ -90,7 +90,7 @@
 
                     <!-- Campo Telefone -->
                     <div class="input-field">
-                        <input id="tel" type="text" class="validate" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
+                        <input id="tel" type="text" class="validate telefone" name="tel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
                         title="Escreva o telefone desse modo: (XX) XXXX-XXXX" placeholder="(XX) XXXX-XXXX" value="{{$user->tel}}" required>
                         <label for="tel">Telefone</label>                                  
                     </div>
@@ -117,8 +117,23 @@
 <script>
 jQuery(function($){
    $("#datanasc").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
-   $("#tel").mask("(99) 9999-9999");
 });
+</script>
+<script>
+jQuery("input.telefone")
+        .mask("(99) 9999-9999?9")
+        .focusout(function (event) {  
+            var target, phone, element;  
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);  
+            element.unmask();  
+            if(phone.length > 10) {  
+                element.mask("(99) 99999-999?9");  
+            } else {  
+                element.mask("(99) 9999-9999?9");  
+            }  
+        });
 </script>
 
 @endsection

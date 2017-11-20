@@ -344,9 +344,10 @@ $count = 0;
                     <!-- Se ele não achar nada ele mostra essa mensagem -->
                     @if($option == 0)
                       <h3 class="center">
-                      Esta instituição não tem nenhum trabalho voluntário conluido!
+                      Esta instituição não tem nenhum trabalho voluntário conluído!
                       </h3>
-                      <br /><br /><br /><br />
+                      <br /><br /><br /><br /><br /><br /><br />
+                      </div>
                     @endif
                       
                     </div>
@@ -356,6 +357,7 @@ $count = 0;
             </div>
           <br /><br /><br />
 </div>
+<br /><br /><br /><br /><br />
 <br /><br /><br /><br /><br />
 </div>
 @endsection

@@ -39,33 +39,37 @@
       <li>
         <img src="{{ asset('image/imagem1.jpg') }}">
         <div class="caption center-align">
-          <h3 class="white-text card-panel center-align">Voluntrab</h3>
-          <h5 class="light white-text text-lighten-3">Ajudando você a ajudar os outros!<br /> <br /> <br /> <br /> <br /> <br /> <br />
-          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a></h5>
+          <div class="card-panel">
+          <h3 class="white-text center-align">Voluntrab</h3>
+          <h5 class="light white-text text-lighten-3">Ajudando você a ajudar os outros!</h5></div><br /> <br /> <br /> <br /> <br /> <br /> <br />
+          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a>
         </div>
       </li>
       <li>
         <img src="{{ asset('image/imagem2.jpeg') }}"> 
         <div class="caption center-align">
+          <div class="card-panel">
           <h3 class="black-text">Seja um Voluntário</h3>
-          <h5 class="light black-text ">Ajude as pessoas a serem felizes!<br /> <br /> <br /> <br /> <br /> <br /> <br />
-          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a></h5>
+          <h5 class="light black-text ">Ajude as pessoas a serem felizes!</h5></div><br /> <br /> <br /> <br /> <br /> <br /> <br />
+          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a>
         </div>
       </li>
       <li>
         <img src="{{ asset('image/imagem3.jpg') }}"> 
         <div class="caption center-align">
+          <div class="card-panel">
           <h3 class="black-text">Cadastre sua Instituição</h3>
-          <h5 class="light black-text ">Peça ajuda e alcançe a todos!<br /> <br /> <br /> <br /> <br /> <br /> <br />
-          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a></h5>
+          <h5 class="light black-text ">Peça ajuda e alcançe a todos!</h5></div> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a>
         </div>
       </li>
       <li>
         <img src="{{ asset('image/imagem4.jpg') }}"> 
         <div class="caption center-align">
+          <div class="card-panel">
           <h3 class="white-text">Começe já!</h3>
-          <h5 class="light white-text text-lighten-3">Você pode começar a usar o Voluntrab agora mesmo! <br /> <br /> <br /> <br /> <br /> <br /> <br />
-          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a></h5>
+          <h5 class="light white-text text-lighten-3">Você pode começar a usar o Voluntrab agora mesmo!</h5></div> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+          <a href="{{ route('home') }}" class="waves-effect waves-blue btn-large btn btn-primary blue darken-2">Entre no site</a>
         </div>
       </li>
     </ul>
@@ -74,6 +78,7 @@
 <br /><br /><br /><br /><br />
   <div class="parallax-container">
   </div>
+<br /><br /><br /><br /> <br /><br />
 <br /><br /><br /><br /> <br /><br />
 
     <div class="section white">
@@ -131,10 +136,10 @@
         <h1 class="center yellow-text">
           <img height="50%" width="50%" src="{{ asset('image/suba-de-nivel.png') }}">
         </h1>
-        <h4 class="center">Suba de nível</h4>
+        <h4 class="center">Complete Conquistas</h4>
         <br />
         <p class="black-text text-darken-3 lighten-3">
-          Ao utilizar o sistema é possivel subir de nivel, e então além de ajudar os outros
+          Ao utilizar o sistema é possivel completar conquistas, e então além de ajudar os outros
           e fazer o bem, você vai ser reconhecido por isso!
         </p>
       </div>

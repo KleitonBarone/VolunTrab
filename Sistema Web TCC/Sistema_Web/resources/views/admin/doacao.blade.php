@@ -38,8 +38,8 @@
                     @foreach($doacaos as $doacao)
                     @if($doacao->status == 0)
                     <?php
-                    $desc = substr ( $doacao->desc , 0 , 25 );
-                    $local = substr ( $doacao->local , 0 , 25 );
+                    $desc = substr ( $doacao->desc , 0 , 13 );
+                    $local = substr ( $doacao->local , 0 , 14 );
                     ?>
                     <tr>
                         <td>{{$doacao->item}}</td>
@@ -107,8 +107,8 @@
                     @foreach($doacaos as $doacao)
                     @if($doacao->status == 1)
                     <?php
-                    $desc = substr ( $doacao->desc , 0 , 25 );
-                    $local = substr ( $doacao->local , 0 , 25 );
+                    $desc = substr ( $doacao->desc , 0 , 15 );
+                    $local = substr ( $doacao->local , 0 , 15 );
                     ?>
                     <tr>
                         <td>{{$doacao->item}}</td>
@@ -155,5 +155,8 @@
                     <br /><br /><br /><br /><br />
             </div>
         </div>
+        <br /><br /><br /><br /><br />
+        <br /><br /><br /><br />
+        <br /><br /><br /><br />
 </div>
 @endsection

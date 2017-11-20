@@ -11,7 +11,12 @@ class ConquistaUser extends Controller
     public function adduser(Request $request,Conquista $conquista) {
         $user = User::find($request->users);
         
+
         $conquista->user()->save($user);
+
+        $user->pontos += $conquista->pontos;
+
+        $user->save();
 
             $conquistas = Conquista::all();
             $users = User::all();

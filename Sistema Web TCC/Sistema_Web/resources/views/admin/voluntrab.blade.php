@@ -38,11 +38,11 @@
                     @foreach($voluntrabs as $voluntrab)
                     @if($voluntrab->status == 0)
                     <?php
-                    $desc = substr ( $voluntrab->desc , 0 , 25 );
-                    $local = substr ( $voluntrab->local , 0 , 25 );
+                    $desc = substr ( $voluntrab->desc , 0 , 10 );
+                    $local = substr ( $voluntrab->local , 0 , 10 );
                     ?>
                     <tr>
-                        <td>{{$voluntrab->titulo}}</td>
+                        <td>{{substr ( $voluntrab->titulo , 0 , 17 )}}...</td>
                         
                         <td>{{$local}}...</td>
                         <td>{{$voluntrab->data}}</td>
@@ -107,8 +107,8 @@
                     @foreach($voluntrabs as $voluntrab)
                     @if($voluntrab->status == 1)
                     <?php
-                    $desc = substr ( $voluntrab->desc , 0 , 25 );
-                    $local = substr ( $voluntrab->local , 0 , 25 );
+                    $desc = substr ( $voluntrab->desc , 0 , 10 );
+                    $local = substr ( $voluntrab->local , 0 , 10 );
                     ?>
                     <tr>
                         <td>{{$voluntrab->titulo}}</td>
@@ -155,5 +155,7 @@
                     <br /><br /><br /><br /><br />
             </div>
         </div>
+        <br /><br /><br /><br /><br />
+        <br /><br /><br /><br />
 </div>
 @endsection
